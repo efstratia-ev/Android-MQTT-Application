@@ -12,9 +12,9 @@ public class esApp {
 
     public static void main(String[] argv) throws Exception {
         System.out.println("Hello World");
-        XMLFileToCSV("InputData/all_vehicles.xml","all_vehicles.csv");
-        XMLFileToCSV("InputData/vehicle_26.xml","vehicle_26.csv");
-        XMLFileToCSV("InputData/vehicle_27.xml","vehicle_27.csv");
+        XMLFileToCSV("InputData/all_vehicles.xml","OutputData/all_vehicles.csv");
+        XMLFileToCSV("InputData/vehicle_26.xml","OutputData/vehicle_26.csv");
+        XMLFileToCSV("InputData/vehicle_27.xml","OutputData/vehicle_27.csv");
 
     }
 
