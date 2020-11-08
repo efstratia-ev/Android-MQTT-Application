@@ -1,4 +1,6 @@
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.Random;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -8,6 +10,7 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 
+
 public class esApp {
 
     public static void main(String[] argv) throws Exception {
@@ -15,12 +18,14 @@ public class esApp {
         XMLFileToCSV("InputData/all_vehicles.xml","OutputData/all_vehicles.csv");
         XMLFileToCSV("InputData/vehicle_26.xml","OutputData/vehicle_26.csv");
         XMLFileToCSV("InputData/vehicle_27.xml","OutputData/vehicle_27.csv");
-
+        heatMap heatMapRSSI=new heatMap(37.9668800,37.9686200,23.7647600,23.7753900);
+        heatMap heatMapThroughput=new heatMap(37.9668800,37.9686200,23.7647600,23.7753900);
+        readCSV("OutputData/all_vehicles.csv",heatMapRSSI,heatMapThroughput);
     }
 
     static public double getRSSI(){
         double aMean = 60.0f;
-        double aVariance = 12.0f;
+        double aVariance = 13.0f;
         Random fRandom = new Random();
         return aMean + fRandom.nextGaussian() * aVariance;
 
@@ -64,4 +69,24 @@ public class esApp {
         writer.flush();
         writer.close();
     }
+
+    static public void  readCSV(String csvFilename,heatMap heatMapRSSI,heatMap heatMapThroughput) throws Exception{
+        String line = "";
+        String cvsSplitBy = ",";
+
+        BufferedReader br = new BufferedReader(new FileReader(csvFilename));
+        while ((line = br.readLine()) != null) {
+            // use comma as separator
+            String[] vehicleData = line.split(cvsSplitBy);
+            double lat=Double.parseDouble(vehicleData[2]),lon=Double.parseDouble(vehicleData[3]);
+            if (heatMapRSSI.isInGrid(lat,lon)) {
+                heatMapRSSI.updateValues(heatMapRSSI.getRow(lat), heatMapRSSI.getColumn(lon), Double.parseDouble(vehicleData[6]));
+                heatMapThroughput.updateValues(heatMapThroughput.getRow(lat), heatMapThroughput.getColumn(lon), Double.parseDouble(vehicleData[7]));
+            }
+            //System.out.println( vehicleData[0]+","+vehicleData[2] + "," + vehicleData[3] + "," + vehicleData[6] + ","+  vehicleData[7]+"\n");
+        }
+        heatMapRSSI.makeHeatMapPNG("OutputData/rssi.png");
+        heatMapThroughput.makeHeatMapPNG("OutputData/throughput.png");
+    }
+
 }
