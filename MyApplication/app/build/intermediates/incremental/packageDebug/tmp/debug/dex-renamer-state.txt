@@ -1,0 +1,4 @@
+#Sat Nov 14 21:06:17 EET 2020
+base.0=/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
