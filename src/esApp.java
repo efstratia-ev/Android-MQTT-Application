@@ -1,8 +1,9 @@
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
+import java.awt.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
 import java.util.Random;
+import javax.imageio.ImageIO;
+import javax.swing.*;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import org.w3c.dom.Document;
@@ -15,12 +16,39 @@ public class esApp {
 
     public static void main(String[] argv) throws Exception {
         System.out.println("Hello World");
+        //convert all 3 xml files to csv
         XMLFileToCSV("InputData/all_vehicles.xml","OutputData/all_vehicles.csv");
         XMLFileToCSV("InputData/vehicle_26.xml","OutputData/vehicle_26.csv");
         XMLFileToCSV("InputData/vehicle_27.xml","OutputData/vehicle_27.csv");
+
+        //produce heat maps
         heatMap heatMapRSSI=new heatMap(37.9668800,37.9686200,23.7647600,23.7753900);
         heatMap heatMapThroughput=new heatMap(37.9668800,37.9686200,23.7647600,23.7753900);
         readCSV("OutputData/all_vehicles.csv",heatMapRSSI,heatMapThroughput);
+        combineMapAndHeatMap("InputData/Map.png","OutputData/rssi.png","OutputData/heatmap.png");
+
+    }
+
+    public static void combineMapAndHeatMap(String inputFile1,String inputFile2,String outputFile) throws Exception{
+        BufferedImage imageMap = ImageIO.read(new File(inputFile1));
+        BufferedImage imageHeat = ImageIO.read(new File(inputFile2));
+        imageHeat = resizeImage(imageHeat,1339,275);
+
+
+        Graphics2D g = imageHeat.createGraphics();
+        g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.5f));
+        g.drawImage(imageMap,  (imageHeat.getWidth() - imageMap.getWidth())/2,(imageHeat.getHeight()-imageMap.getHeight())/2, null);
+        g.dispose();
+
+        ImageIO.write(imageHeat, "png", new File(outputFile));
+    }
+
+    public static BufferedImage resizeImage(BufferedImage originalImage, int targetWidth, int targetHeight) throws IOException {
+        BufferedImage resizedImage = new BufferedImage(targetWidth, targetHeight, BufferedImage.TYPE_INT_RGB);
+        Graphics2D graphics2D = resizedImage.createGraphics();
+        graphics2D.drawImage(originalImage, 0, 0, targetWidth, targetHeight, null);
+        graphics2D.dispose();
+        return resizedImage;
     }
 
     static public double getRSSI(){

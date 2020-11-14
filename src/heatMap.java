@@ -32,14 +32,12 @@ public class heatMap {
         return (!(lat > max_lat) && !(lat < min_lat)) && (!(lon > max_long) && !(lon < min_long));
 
     }
-    //TODO check an ontws einai ta swsta rows columns, logika einai
+
     public int getRow(double value){
-        //return (int)(value/(lat_interval+min_lat)+1);
         return rows-(int)((value-min_lat)/lat_interval)-1;
     }
     
     public int getColumn(double value){
-        //return (int)(value/(long_interval)+1);
         return (int)((value-min_long)/long_interval);
     }
 
@@ -54,9 +52,7 @@ public class heatMap {
         for(int i=0;i<rows;i++) {
             for (int j = 0; j < columns; j++) {
                 gridValues[i][j] = gridCounts[i][j] == 0 ? 0 : gridValues[i][j] / gridCounts[i][j];
-                //System.out.print(gridValues[i][j]+"  ");
             }
-            //System.out.println();
         }
     }
 
@@ -71,8 +67,8 @@ public class heatMap {
         map.setYAxisLabel(null);
         map.setShowXAxisValues(false);
         map.setShowYAxisValues(false);
-        map.setChartMargin(2);
-
+        map.setChartMargin(0);
+        map.setAxisThickness(0);
         map.saveToFile(new File(filename));
     }
 
