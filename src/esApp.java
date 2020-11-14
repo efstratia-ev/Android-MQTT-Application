@@ -14,21 +14,6 @@ import org.w3c.dom.Element;
 
 public class esApp {
 
-    public static void main(String[] argv) throws Exception {
-        System.out.println("Hello World");
-        //convert all 3 xml files to csv
-        XMLFileToCSV("InputData/all_vehicles.xml","OutputData/all_vehicles.csv");
-        XMLFileToCSV("InputData/vehicle_26.xml","OutputData/vehicle_26.csv");
-        XMLFileToCSV("InputData/vehicle_27.xml","OutputData/vehicle_27.csv");
-
-        //produce heat maps
-        heatMap heatMapRSSI=new heatMap(37.9668800,37.9686200,23.7647600,23.7753900);
-        heatMap heatMapThroughput=new heatMap(37.9668800,37.9686200,23.7647600,23.7753900);
-        readCSV("OutputData/all_vehicles.csv",heatMapRSSI,heatMapThroughput);
-        combineMapAndHeatMap("InputData/Map.png","OutputData/rssi.png","OutputData/heatmap.png");
-
-    }
-
     public static void combineMapAndHeatMap(String inputFile1,String inputFile2,String outputFile) throws Exception{
         BufferedImage imageMap = ImageIO.read(new File(inputFile1));
         BufferedImage imageHeat = ImageIO.read(new File(inputFile2));
