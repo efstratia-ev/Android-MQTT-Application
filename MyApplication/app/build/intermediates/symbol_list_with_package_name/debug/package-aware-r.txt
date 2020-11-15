@@ -1585,9 +1585,8 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
-drawable ic_launcher_background
-drawable ic_launcher_foreground
-drawable ic_menu_camera
+drawable exit_icon
+drawable home_icon
 drawable ic_menu_gallery
 drawable ic_menu_manage
 drawable ic_menu_send
@@ -1626,6 +1625,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable settings_icon
 drawable side_nav_bar
 drawable test_custom_background
 drawable tooltip_frame_dark
@@ -1695,7 +1695,6 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
-id action_settings
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1786,7 +1785,6 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
-id fab
 id fade
 id fill
 id fill_horizontal
@@ -1868,11 +1866,11 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
 id nav_controller_view_tag
-id nav_gallery
+id nav_exit
 id nav_home
 id nav_host_fragment
 id nav_host_fragment_container
-id nav_slideshow
+id nav_settings
 id nav_view
 id navigation_header_container
 id never
@@ -1984,11 +1982,10 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
-id text_gallery
 id text_home
 id text_input_end_icon
 id text_input_start_icon
-id text_slideshow
+id text_settings
 id textinput_counter
 id textinput_error
 id textinput_helper_text
@@ -2107,7 +2104,6 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_home
 layout fragment_settings
-layout fragment_slideshow
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -2171,7 +2167,6 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu activity_main_drawer
-menu main
 mipmap ic_launcher
 mipmap ic_launcher_round
 navigation mobile_navigation
@@ -2221,9 +2216,9 @@ string icon_content_description
 string item_view_role_description
 string material_slider_range_end
 string material_slider_range_start
-string menu_gallery
+string menu_exit
 string menu_home
-string menu_slideshow
+string menu_settings
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_content_description
