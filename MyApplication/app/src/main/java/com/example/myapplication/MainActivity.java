@@ -12,6 +12,7 @@ import android.provider.Settings;
 import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
+import com.example.myapplication.MQTTConnection.MQTTPublisher;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -24,7 +25,7 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
-    MQTTCon MQTTCon;
+    MQTTPublisher MQTTPub;
     private AppBarConfiguration mAppBarConfiguration;
     DrawerLayout drawer;
     NavigationView navigationView;
@@ -51,7 +52,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         try {
-            MQTTCon = new MQTTCon(getApplicationContext());
+            MQTTPub = new MQTTPublisher(getApplicationContext());
+            MQTTPub.publish_message("ferferfr");
         } catch (MqttException e) {
             e.printStackTrace();
         }
