@@ -1,4 +1,4 @@
-
+import MQTTConnection.MQTTSubscriber;
 
 class Project{
     public static void main(String[] argv) throws Exception {
@@ -14,7 +14,7 @@ class Project{
         esApp.combineMapAndHeatMap("InputData/Map.png","OutputData/rssi.png","OutputData/heatmapRSSI.png");
         esApp.combineMapAndHeatMap("InputData/Map.png","OutputData/throughput.png","OutputData/heatmapThroughput.png");
 
-        MQTTConnection MQTTConnection = new MQTTConnection();
+        MQTTSubscriber subscriber=new MQTTSubscriber();
     }
 }
 
