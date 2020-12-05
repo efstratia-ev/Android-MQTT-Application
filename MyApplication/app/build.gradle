@@ -37,5 +37,6 @@ dependencies {
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
     implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
     implementation 'androidx.localbroadcastmanager:localbroadcastmanager:1.0.0'
-
+    implementation 'com.takisoft.fix:preference-v7:25.0.1.0'
+    implementation 'androidx.preference:preference:1.1.1'
 }
