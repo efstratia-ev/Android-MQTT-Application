@@ -1,12 +1,17 @@
 package com.example.myapplication;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
+import com.example.myapplication.Utilities.MyCSVReader;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -21,10 +26,13 @@ import static com.example.myapplication.Utilities.Connection.isConnected;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     public static boolean restart=true;
+    public static int max=10;
+    public static int measurementsSend=10;
     private AppBarConfiguration mAppBarConfiguration;
     DrawerLayout drawer;
     NavigationView navigationView;
     NavController navController;
+    public static MyCSVReader csvReader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +53,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationUI.setupWithNavController(navigationView, navController);
         navigationView.setNavigationItemSelectedListener(this);
 
+        csvReader=new MyCSVReader(this);
+        max=csvReader.getLinesNumber();
+        measurementsSend=max;
 
         final Handler handler=new Handler();
         handler.postDelayed(new Runnable() {

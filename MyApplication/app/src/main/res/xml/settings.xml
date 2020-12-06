@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
                   android:title="Settings">
-    <PreferenceCategory xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:title="MQTT Broker">
         <EditTextPreference
                 android:key="IP"
-                android:title="Broker IP address"
+                android:title="IP address"
                 app:useSimpleSummaryProvider="true"
+        />
+        <EditTextPreference
+                android:key="Port"
+                android:title="Port"
+                app:useSimpleSummaryProvider="true"
+                android:inputType="number"
+        />
+    </PreferenceCategory>
+
+    <PreferenceCategory xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:title="Outgoing Settings">
+        <EditTextPreference
+                android:key="Measurements"
+                android:title="Sending Time"
+                android:dialogTitle="Sending Time(seconds)"
+                app:useSimpleSummaryProvider="true"
+                android:inputType="number"
         />
     </PreferenceCategory>
 

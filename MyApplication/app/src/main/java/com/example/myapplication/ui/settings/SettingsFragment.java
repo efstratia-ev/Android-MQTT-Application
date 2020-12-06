@@ -2,17 +2,16 @@ package com.example.myapplication.ui.settings;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.widget.Toast;
 import androidx.annotation.Nullable;
+import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import com.example.myapplication.MQTTConnection.MQTTInfo;
-import com.example.myapplication.MQTTConnection.MQTTPublisher;
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import com.takisoft.fix.support.v7.preference.EditTextPreference;
 import com.takisoft.fix.support.v7.preference.PreferenceFragmentCompat;
-import org.eclipse.paho.client.mqttv3.MqttException;
 
-import java.util.Map;
 import java.util.Objects;
 
 public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
@@ -25,6 +24,12 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         Preference preference = findPreference("IP");
         assert preference != null;
         ((EditTextPreference)preference).setText(MQTTInfo.getIP());
+        preference = findPreference("Port");
+        assert preference != null;
+        ((EditTextPreference)preference).setText(String.valueOf(MQTTInfo.getPort()));
+        preference = findPreference("Measurements");
+        assert preference != null;
+        ((EditTextPreference)preference).setText(String.valueOf(MainActivity.measurementsSend));
     }
 
     @Override
@@ -52,6 +57,22 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
             assert preference != null;
             MQTTInfo.setIP(((EditTextPreference)preference).getText());
             MainActivity.restart=true;
+        }
+        if (key.equals("Port")) {
+            Preference preference = findPreference(key);
+            assert preference != null;
+            MQTTInfo.setPort(Integer.parseInt(((EditTextPreference)preference).getText()));
+            MainActivity.restart=true;
+        }
+        if (key.equals("Measurements")) {
+            Preference preference = findPreference(key);
+            int val = Integer.parseInt(preference != null ? ((EditTextPreference) preference).getText() : null);
+            if (val<1 || val>MainActivity.max) {
+                // invalid you can show invalid message
+                ((EditTextPreference)preference).setText(String.valueOf(MainActivity.measurementsSend));
+                Toast.makeText(Objects.requireNonNull(getActivity()).getApplicationContext(), "Value mast be in range [0,"+MainActivity.max+"]", Toast.LENGTH_LONG).show();
+            }
+            else MainActivity.measurementsSend=val;
         }
     }
 }

@@ -19,6 +19,8 @@ import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import org.eclipse.paho.client.mqttv3.MqttException;
 
+import java.io.IOException;
+
 public class HomeFragment extends Fragment {
 
     @SuppressLint("StaticFieldLeak")
@@ -29,10 +31,9 @@ public class HomeFragment extends Fragment {
     private final Handler hdlr = new Handler();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle   savedInstanceState) {
-        final int max=10;
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
         progressBar = (ProgressBar) view.findViewById(R.id.pBar);
-        progressBar.setMax(max);
+        progressBar.setMax(MainActivity.measurementsSend);
         txtView = (TextView) view.findViewById(R.id.tView);
         if(MainActivity.restart) {
             progressBar.setVisibility(View.GONE); // to hide
@@ -63,10 +64,16 @@ public class HomeFragment extends Fragment {
                     final MQTTPublisher finalMQTTPub = MQTTPub;
                     new Thread(new Runnable() {
                         public void run() {
-                            while (i < max && !MainActivity.restart) {
+                            try {
+                                MainActivity.csvReader.resetFile();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
+                            while (i < MainActivity.measurementsSend && !MainActivity.restart) {
                                 try {
-                                    finalMQTTPub.publish_message("lala"+i);
-                                } catch (MqttException e) {
+                                    String toSend=MainActivity.csvReader.readLine();
+                                    finalMQTTPub.publish_message(toSend);
+                                } catch (MqttException | IOException e) {
                                     e.printStackTrace();
                                 }
                                 i += 1;
