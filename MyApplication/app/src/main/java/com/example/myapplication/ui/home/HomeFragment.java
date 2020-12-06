@@ -43,12 +43,6 @@ public class HomeFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MQTTPublisher MQTTPub = null;
-                try {
-                    MQTTPub=new MQTTPublisher(getActivity().getApplicationContext());
-                } catch (MqttException e) {
-                    e.printStackTrace();
-                }
                 if (btn.getText().length() == 0 || btn.getText().equals("Stop Progress")) {
                     btn.setText("Start Progress");
                     MainActivity.restart=true;
@@ -61,20 +55,28 @@ public class HomeFragment extends Fragment {
                     progressBar.setVisibility(View.VISIBLE); //to show
                     txtView.setVisibility(View.VISIBLE);
                     i = 0;
-                    final MQTTPublisher finalMQTTPub = MQTTPub;
                     new Thread(new Runnable() {
                         public void run() {
+                            MQTTPublisher MQTTPub = null;
+                            try {
+                                MQTTPub=new MQTTPublisher(getActivity().getApplicationContext());
+                            } catch (MqttException e) {
+                                e.printStackTrace();
+                                return;
+                            }
                             try {
                                 MainActivity.csvReader.resetFile();
                             } catch (IOException e) {
                                 e.printStackTrace();
+                                return;
                             }
                             while (i < MainActivity.measurementsSend && !MainActivity.restart) {
                                 try {
                                     String toSend=MainActivity.csvReader.readLine();
-                                    finalMQTTPub.publish_message(toSend);
+                                    if(!MQTTPub.publish_message(toSend)) break;
                                 } catch (MqttException | IOException e) {
                                     e.printStackTrace();
+                                    return;
                                 }
                                 i += 1;
                                 // Update the progress bar and display the current value in text view
@@ -89,6 +91,7 @@ public class HomeFragment extends Fragment {
                                     Thread.sleep(1000);
                                 } catch (InterruptedException e) {
                                     e.printStackTrace();
+                                    return;
                                 }
                             }
                         }

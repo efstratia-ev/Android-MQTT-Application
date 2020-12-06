@@ -1,7 +1,9 @@
 package com.example.myapplication;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -28,14 +30,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public static boolean restart=true;
     public static int max=10;
     public static int measurementsSend=10;
+    public static int TerminalID;
+    @SuppressLint("StaticFieldLeak")
+    public static Context context;
+    public static MyCSVReader csvReader;
     private AppBarConfiguration mAppBarConfiguration;
     DrawerLayout drawer;
     NavigationView navigationView;
     NavController navController;
-    public static MyCSVReader csvReader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        context=this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);

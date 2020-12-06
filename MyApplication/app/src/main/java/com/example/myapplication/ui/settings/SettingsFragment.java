@@ -13,6 +13,7 @@ import com.takisoft.fix.support.v7.preference.EditTextPreference;
 import com.takisoft.fix.support.v7.preference.PreferenceFragmentCompat;
 
 import java.util.Objects;
+import java.util.regex.Pattern;
 
 public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -54,14 +55,19 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         if (key.equals("IP")) {
             Preference preference = findPreference(key);
-            assert preference != null;
-            MQTTInfo.setIP(((EditTextPreference)preference).getText());
-            MainActivity.restart=true;
+            String val= preference != null ? ((EditTextPreference) preference).getText() : null;
+            if(validate(val)) {
+                MQTTInfo.setIP(val);
+                MainActivity.restart = true;
+            }
+            else{
+                ((EditTextPreference)preference).setText(MQTTInfo.getIP());
+                Toast.makeText(Objects.requireNonNull(getActivity()).getApplicationContext(), val+" is not a valid IP address", Toast.LENGTH_LONG).show();
+            }
         }
         if (key.equals("Port")) {
             Preference preference = findPreference(key);
-            assert preference != null;
-            MQTTInfo.setPort(Integer.parseInt(((EditTextPreference)preference).getText()));
+            MQTTInfo.setPort(Integer.parseInt(preference != null ? ((EditTextPreference) preference).getText() : null));
             MainActivity.restart=true;
         }
         if (key.equals("Measurements")) {
@@ -69,10 +75,19 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
             int val = Integer.parseInt(preference != null ? ((EditTextPreference) preference).getText() : null);
             if (val<1 || val>MainActivity.max) {
                 // invalid you can show invalid message
-                ((EditTextPreference)preference).setText(String.valueOf(MainActivity.measurementsSend));
+                if (preference != null) {
+                    ((EditTextPreference)preference).setText(String.valueOf(MainActivity.measurementsSend));
+                }
                 Toast.makeText(Objects.requireNonNull(getActivity()).getApplicationContext(), "Value mast be in range [0,"+MainActivity.max+"]", Toast.LENGTH_LONG).show();
             }
             else MainActivity.measurementsSend=val;
         }
+    }
+
+    private static final Pattern PATTERN = Pattern.compile(
+            "^(([01]?\\d\\d?|2[0-4]\\d|25[0-5])\\.){3}([01]?\\d\\d?|2[0-4]\\d|25[0-5])$");
+
+    public static boolean validate(final String ip) {
+        return PATTERN.matcher(ip).matches();
     }
 }

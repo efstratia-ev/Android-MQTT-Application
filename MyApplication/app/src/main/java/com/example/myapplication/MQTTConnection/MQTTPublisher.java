@@ -1,6 +1,7 @@
 package com.example.myapplication.MQTTConnection;
 
 import android.content.Context;
+import com.example.myapplication.MainActivity;
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
@@ -16,7 +17,7 @@ public class MQTTPublisher {
 
     public MQTTPublisher(Context context) throws MqttException {
         clientId=MQTTInfo.getClient()+"pub";
-        publishTopic=MQTTInfo.getTopic();
+        publishTopic="ATtoES"+ MainActivity.TerminalID;
 
         //Connect client to MQTT Broker
         client = new MqttAndroidClient(context,MQTTInfo.getServerURI(),clientId,new MemoryPersistence()); //Persistence
@@ -24,7 +25,8 @@ public class MQTTPublisher {
         mqttConnectOptions.setCleanSession(true);
     }
 
-    public void publish_message(final String payload) throws MqttException {
+    public boolean publish_message(final String payload) throws MqttException {
+        final boolean[] returnValue = {true};
         client.connect(mqttConnectOptions,new IMqttActionListener(){
             @Override
             public void onSuccess(IMqttToken asyncActionToken) {
@@ -34,6 +36,7 @@ public class MQTTPublisher {
                     client.publish(publishTopic, message);
                     IMqttToken disconnect = client.disconnect();
                 } catch (MqttException e) {
+                    returnValue[0] =false;
                     e.printStackTrace();
                 }
             }
@@ -42,5 +45,6 @@ public class MQTTPublisher {
 
             }
         });
+        return returnValue[0];
     }
 }

@@ -1,6 +1,7 @@
 package com.example.myapplication.MQTTConnection;
 
 import android.content.Context;
+import com.example.myapplication.MainActivity;
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
@@ -13,7 +14,7 @@ public class MQTTSubscriber implements MqttCallback {
 
     public MQTTSubscriber(Context context) throws MqttException {
         clientId=MQTTInfo.getClient()+"sub";
-        subscriptionTopic=MQTTInfo.getTopic();
+        subscriptionTopic="EStoAT"+ MainActivity.TerminalID;
 
         //Connect client to MQTT Broker
         client = new MqttAndroidClient(context,MQTTInfo.getServerURI(),clientId,new MemoryPersistence());

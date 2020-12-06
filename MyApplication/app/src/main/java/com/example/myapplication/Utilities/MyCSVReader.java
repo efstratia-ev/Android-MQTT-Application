@@ -5,10 +5,7 @@ import android.widget.Toast;
 import com.example.myapplication.MainActivity;
 import com.opencsv.CSVReader;
 
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.LineNumberReader;
+import java.io.*;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -17,16 +14,31 @@ public class MyCSVReader {
     CSVReader reader;
     String path;
     public MyCSVReader(Context context){
-        path = context.getExternalFilesDir(null).toString()+"/vehicle_26.csv";
+        path = context.getExternalFilesDir(null).toString();
+        File directory = new File(path);
+        File[] files = directory.listFiles();
+        String name="";
+        for (int i = 0; i < files.length; i++) {
+            if(files[i].getName().startsWith("vehicle")){
+                name=files[i].getName();
+                break;
+            }
+        }
+        path+="/"+name;
         try {
             reader = new CSVReader(new FileReader(path));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         linesNumber=0;
+        String[] line;
         while (true) {
             try {
-                if (reader.readNext() == null) break;
+                line=reader.readNext();
+                if(line == null) break;
+                if(linesNumber==0){
+                    MainActivity.TerminalID = Integer.parseInt(line[1]);
+                }
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -36,8 +48,7 @@ public class MyCSVReader {
     }
 
     public String readLine() throws IOException {
-        String[] a=reader.readNext();
-        return Arrays.toString(a);
+        return Arrays.toString(reader.readNext());
     }
 
     public void resetFile() throws IOException {

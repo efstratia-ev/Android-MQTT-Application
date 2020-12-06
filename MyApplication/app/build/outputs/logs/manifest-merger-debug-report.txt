@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-33:12
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
 MERGED from [androidx.navigation:navigation-ui:2.3.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/94e6571d583ae21c2c11a19313eff527/navigation-ui-2.3.1/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.2.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/b5cf40796c25367401fbf6ec124658c0/material-1.2.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3650ec8bf0dcc8ccaa9d86d2cec22c9f/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
@@ -53,20 +53,20 @@ MERGED from [androidx.print:print:1.0.0] /home/efstratia/.gradle/caches/transfor
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/65c3d4650b10035e3c16dbbe7955e172/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/f21ecb78568f62b9cfdf7ce8b84f47c1/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/faa46d3172606436a70f4954c4fe88af/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-33:12
-INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-33:12
+INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
 	package
 		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:3:11-46
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-33:12
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-33:12
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:11-69
@@ -86,8 +86,12 @@ uses-permission#android.permission.READ_PHONE_STATE
 ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:8:5-75
 	android:name
 		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:8:22-72
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:9:5-80
+	android:name
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:9:22-77
 application
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:11:5-31:19
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:13:5-33:19
 MERGED from [com.google.android.material:material:1.2.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/b5cf40796c25367401fbf6ec124658c0/material-1.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/b5cf40796c25367401fbf6ec124658c0/material-1.2.1/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3650ec8bf0dcc8ccaa9d86d2cec22c9f/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
@@ -103,39 +107,39 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/efstr
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.3.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/395caf503a19363977c06465a7c114a5/core-1.3.1/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:16:13-39
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:18:13-39
 	android:label
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:14:13-45
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:16:13-45
 	android:roundIcon
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:15:13-58
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:17:13-58
 	android:icon
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:13:13-46
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:15:13-46
 	android:allowBackup
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:12:13-39
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:14:13-39
 	android:theme
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:17:13-44
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:19:13-44
 activity#com.example.myapplication.MainActivity
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:18:9-27:20
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:20:9-29:20
 	android:label
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:20:17-49
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:22:17-49
 	android:theme
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:21:17-60
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:23:17-60
 	android:name
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:19:17-45
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:21:17-45
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:22:13-26:29
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:24:13-28:29
 action#android.intent.action.MAIN
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:23:17-68
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:25:17-68
 	android:name
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:23:25-66
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:25:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:25:17-76
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:27:17-76
 	android:name
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:25:27-74
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:27:27-74
 service#org.eclipse.paho.android.service.MqttService
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:29:9-79
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:31:9-79
 	android:name
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:29:18-77
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:31:18-77
 uses-sdk
 INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
