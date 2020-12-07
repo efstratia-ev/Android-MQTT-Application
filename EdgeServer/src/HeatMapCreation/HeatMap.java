@@ -1,9 +1,13 @@
+package HeatMapCreation;
+
 import org.tc33.jheatchart.HeatChart;
 
 import java.awt.*;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 
-public class heatMap {
+public class HeatMap {
     int rows;
     int columns;
     double min_lat;
@@ -15,7 +19,7 @@ public class heatMap {
     double [][] gridValues ;
     int [][] gridCounts ;
 
-    public heatMap(double min_lat, double max_lat, double min_long, double max_long) {
+    public HeatMap(double min_lat, double max_lat, double min_long, double max_long) {
         this.rows=4;
         this.columns=10;
         this.min_lat = min_lat;
