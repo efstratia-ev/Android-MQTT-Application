@@ -9,15 +9,14 @@ import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class MQTTPublisher {
-    private final int qos = 2;
-    String publishTopic;
+    String[] Topics;
     String clientId;
     MqttClient client;
     MqttConnectOptions options;
 
     MQTTPublisher() throws MqttException {
         clientId=MQTTInfo.getClient()+"pub";
-        publishTopic=MQTTInfo.getTopic()+"pub";
+        Topics=MQTTInfo.getPublishingTopics();
 
         //Connect client to MQTT Broker
         client = new MqttClient(MQTTInfo.getServerURI(),clientId, new MemoryPersistence());
@@ -28,8 +27,10 @@ public class MQTTPublisher {
     public void publish_message(String payload) throws MqttException {
         client.connect(options);
         MqttMessage message = new MqttMessage(payload.getBytes());
-        message.setQos(qos);
-        this.client.publish(this.publishTopic, message);
+        message.setQos(2);
+        for(String topic:Topics){
+            client.publish(topic,message);
+        }
         client.disconnect();
     }
 }

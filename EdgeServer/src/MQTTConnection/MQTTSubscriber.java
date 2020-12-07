@@ -4,14 +4,13 @@ import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
 public class MQTTSubscriber implements MqttCallback {
-    private final int qos = 2;
-    String subscriptionTopic;
+    String[] topics;
     String clientId;
     MqttClient client;
 
     public MQTTSubscriber() throws MqttException {
         clientId=MQTTInfo.getClient()+"sub";
-        subscriptionTopic=MQTTInfo.getTopic();
+        topics=MQTTInfo.getSubscriptionTopics();
 
         //Connect client to MQTT Broker
         client = new MqttClient(MQTTInfo.getServerURI(),clientId, new MemoryPersistence());
@@ -20,7 +19,7 @@ public class MQTTSubscriber implements MqttCallback {
 
         client.setCallback(this);
         this.client.connect(options);
-        this.client.subscribe(this.subscriptionTopic,qos);
+        this.client.subscribe(topics,MQTTInfo.getQos());
     }
 
     @Override

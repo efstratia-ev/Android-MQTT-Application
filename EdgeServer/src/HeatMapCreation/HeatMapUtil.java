@@ -5,10 +5,19 @@ import java.awt.image.BufferedImage;
 import java.io.*;
 import javax.imageio.ImageIO;
 
-import HeatMapCreation.HeatMap;
-
 
 public class HeatMapUtil {
+
+    private enum Limits {
+        MIN_LAT(37.9668800),MAX_LAT(37.9686200),MIN_LONG(23.7647600),MAX_LONG(23.7753900);
+        private final double value;
+        private Limits(double value) {
+            this.value = value;
+        }
+        public double value() {
+            return value;
+        }
+    }
     public static void createHeatMap() throws Exception {
         //convert all 3 xml files to csv
         CreateCSV.XMLFileToCSV("InputData/all_vehicles.xml","OutputData/all_vehicles.csv");
@@ -16,8 +25,8 @@ public class HeatMapUtil {
         CreateCSV.XMLFileToCSV("InputData/vehicle_27.xml","OutputData/vehicle_27.csv");
 
         //produce heat maps
-        HeatMap heatMapRSSI=new HeatMap(37.9668800,37.9686200,23.7647600,23.7753900);
-        HeatMap heatMapThroughput=new HeatMap(37.9668800,37.9686200,23.7647600,23.7753900);
+        HeatMap heatMapRSSI=new HeatMap(Limits.MIN_LAT.value(),Limits.MAX_LAT.value(),Limits.MIN_LONG.value(),Limits.MAX_LONG.value());
+        HeatMap heatMapThroughput=new HeatMap(Limits.MIN_LAT.value(),Limits.MAX_LAT.value(),Limits.MIN_LONG.value(),Limits.MAX_LONG.value());
         HeatMapUtil.readCSV("OutputData/all_vehicles.csv",heatMapRSSI,heatMapThroughput);
         HeatMapUtil.combineMapAndHeatMap("InputData/Map.png","OutputData/rssi.png","OutputData/heatmapRSSI.png");
         HeatMapUtil.combineMapAndHeatMap("InputData/Map.png","OutputData/throughput.png","OutputData/heatmapThroughput.png");
