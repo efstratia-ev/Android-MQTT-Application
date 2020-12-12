@@ -5,14 +5,15 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.pm.PackageManager;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MenuItem;
-import android.widget.Toast;
 import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
+import androidx.preference.PreferenceManager;
+import com.example.myapplication.MQTTConnection.MQTTInfo;
 import com.example.myapplication.Utilities.MyCSVReader;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
@@ -28,8 +29,8 @@ import static com.example.myapplication.Utilities.Connection.isConnected;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     public static boolean restart=true;
-    public static int max=10;
-    public static int measurementsSend=10;
+    public static int max;
+    public static int measurementsSend;
     public static int TerminalID;
     @SuppressLint("StaticFieldLeak")
     public static Context context;
@@ -41,8 +42,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        context=this;
         super.onCreate(savedInstanceState);
+        context=this;
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationUI.setupWithNavController(navigationView, navController);
         navigationView.setNavigationItemSelectedListener(this);
 
+
         csvReader=new MyCSVReader(this);
         max=csvReader.getLinesNumber();
         measurementsSend=max;
@@ -67,12 +69,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                isConnected(getApplicationContext());
-                handler.postDelayed(this,1000);
+                isConnected(context);
+                handler.postDelayed(this,3000);
             }
-        },1000);
-    }
+        },3000);
 
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == 0) {
+            Intent intent = new Intent(this, MainActivity.class);
+            this.startActivity(intent);
+        }
+    }
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
        boolean handled = NavigationUI.onNavDestinationSelected(item, navController);

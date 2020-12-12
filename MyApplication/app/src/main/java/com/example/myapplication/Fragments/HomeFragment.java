@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.fragment.app.Fragment;
 import com.example.myapplication.MQTTConnection.MQTTPublisher;
 import com.example.myapplication.MainActivity;
@@ -17,7 +16,6 @@ import com.example.myapplication.R;
 import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
@@ -33,15 +31,18 @@ public class HomeFragment extends Fragment {
         progressBar = (ProgressBar) view.findViewById(R.id.pBar);
         progressBar.setMax(MainActivity.measurementsSend);
         txtView = (TextView) view.findViewById(R.id.tView);
+        txtView.setText(0+"/"+MainActivity.measurementsSend);
         if(MainActivity.restart) {
             progressBar.setVisibility(View.GONE); // to hide
             txtView.setVisibility(View.GONE);
         }
         final Button btn = (Button)view.findViewById(R.id.btnShow);
+        if(i!=0) btn.setText("Stop Progress");
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (btn.getText().length() == 0 || btn.getText().equals("Stop Progress")) {
+                if (i!=0) {
+                    i=0;
                     btn.setText("Start Progress");
                     MainActivity.restart=true;
                     progressBar.setVisibility(View.GONE); // to hide
@@ -52,19 +53,24 @@ public class HomeFragment extends Fragment {
                     btn.setText("Stop Progress");
                     progressBar.setVisibility(View.VISIBLE); //to show
                     txtView.setVisibility(View.VISIBLE);
-                    i = 0;
-                    new Thread(new Runnable() {
+                    Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+                        @Override
+                        public void uncaughtException(Thread t, Throwable e) {
+                            System.out.println("Caught " + e);
+                        }
+                    });
+                    Thread t=new Thread(){
                         public void run() {
-                            MQTTPublisher MQTTPub = null;
-                            try {
-                                MQTTPub=new MQTTPublisher(getActivity().getApplicationContext());
-                            } catch (MqttException e) {
-                                e.printStackTrace();
-                                return;
-                            }
                             try {
                                 MainActivity.csvReader.resetFile();
                             } catch (IOException e) {
+                                e.printStackTrace();
+                                return;
+                            }
+                            MQTTPublisher MQTTPub = null;
+                            try {
+                                MQTTPub=new MQTTPublisher(MainActivity.context);
+                            } catch (MqttException e) {
                                 e.printStackTrace();
                                 return;
                             }
@@ -77,23 +83,22 @@ public class HomeFragment extends Fragment {
                                     return;
                                 }
                                 i += 1;
-                                // Update the progress bar and display the current value in text view
                                 hdlr.post(new Runnable() {
                                     public void run() {
                                         progressBar.setProgress(i);
                                         txtView.setText(i+"/"+progressBar.getMax());
                                     }
                                 });
+                                // Update the progress bar and display the current value in text view
                                 try {
-                                    // Sleep for 100 milliseconds to show the progress slowly.
                                     Thread.sleep(1000);
                                 } catch (InterruptedException e) {
                                     e.printStackTrace();
-                                    return;
                                 }
                             }
                         }
-                    }).start();
+                    };
+                    t.start();
                 }
             }
         });

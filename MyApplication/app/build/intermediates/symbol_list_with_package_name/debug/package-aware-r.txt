@@ -2271,7 +2271,6 @@ mipmap seahorse_foreground
 mipmap seahorse_round
 navigation mobile_navigation
 plurals mtrl_badge_content_description
-string IP
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

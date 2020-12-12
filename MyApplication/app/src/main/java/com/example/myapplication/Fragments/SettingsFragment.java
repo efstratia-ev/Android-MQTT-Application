@@ -19,7 +19,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // load the preferences from your XML resource (which I assume you already do anyway)
+        // load the preferences from XML resource
         addPreferencesFromResource(R.xml.settings);
         Preference preference = findPreference("IP");
         assert preference != null;
@@ -28,8 +28,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
         assert preference != null;
         ((EditTextPreference)preference).setText(String.valueOf(MQTTInfo.getPort()));
         preference = findPreference("Measurements");
-        assert preference != null;
-        ((EditTextPreference)preference).setText(String.valueOf(MainActivity.measurementsSend));
+        ((EditTextPreference) Objects.requireNonNull(preference)).setText(String.valueOf(MainActivity.measurementsSend));
     }
 
     @Override
@@ -41,7 +40,6 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     public void onResume() {
         super.onResume();
         getPreferenceManager().getSharedPreferences().registerOnSharedPreferenceChangeListener(this);
-
     }
 
     @Override
@@ -60,7 +58,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
                 MainActivity.restart = true;
             }
             else{
-                ((EditTextPreference)preference).setText(MQTTInfo.getIP());
+                ((EditTextPreference) Objects.requireNonNull(preference)).setText(MQTTInfo.getIP());
                 Toast.makeText(Objects.requireNonNull(getActivity()).getApplicationContext(), val+" is not a valid IP address", Toast.LENGTH_LONG).show();
             }
         }

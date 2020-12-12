@@ -6,7 +6,6 @@ import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
-import static java.nio.charset.StandardCharsets.UTF_8;
 
 public class MQTTPublisher {
     private final int qos = 2;
@@ -41,7 +40,7 @@ public class MQTTPublisher {
             }
             @Override
             public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-
+                returnValue[0] =false;
             }
         });
         return returnValue[0];
