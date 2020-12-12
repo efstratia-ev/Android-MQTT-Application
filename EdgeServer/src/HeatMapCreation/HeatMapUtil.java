@@ -27,7 +27,7 @@ public class HeatMapUtil {
         //produce heat maps
         HeatMap heatMapRSSI=new HeatMap(Limits.MIN_LAT.value(),Limits.MAX_LAT.value(),Limits.MIN_LONG.value(),Limits.MAX_LONG.value());
         HeatMap heatMapThroughput=new HeatMap(Limits.MIN_LAT.value(),Limits.MAX_LAT.value(),Limits.MIN_LONG.value(),Limits.MAX_LONG.value());
-        HeatMapUtil.readCSV("OutputData/all_vehicles.csv",heatMapRSSI,heatMapThroughput);
+        HeatMapUtil.readCSVandProduceHeatMap("OutputData/all_vehicles.csv",heatMapRSSI,heatMapThroughput);
         HeatMapUtil.combineMapAndHeatMap("InputData/Map.png","OutputData/rssi.png","OutputData/heatmapRSSI.png");
         HeatMapUtil.combineMapAndHeatMap("InputData/Map.png","OutputData/throughput.png","OutputData/heatmapThroughput.png");
     }
@@ -54,7 +54,7 @@ public class HeatMapUtil {
         return resizedImage;
     }
 
-    static public void  readCSV(String csvFilename, HeatMap heatMapRSSI, HeatMap heatMapThroughput) throws Exception{
+    static public void readCSVandProduceHeatMap(String csvFilename, HeatMap heatMapRSSI, HeatMap heatMapThroughput) throws Exception{
         String line = "";
         String cvsSplitBy = ",";
 
