@@ -34,7 +34,6 @@ public class MQTTPublisher {
                 message.setQos(qos);
                 try {
                     client.publish(publishTopic, message);
-                    IMqttToken disconnect = client.disconnect();
                 } catch (MqttException e) {
                     returnValue[0] =false;
                     e.printStackTrace();

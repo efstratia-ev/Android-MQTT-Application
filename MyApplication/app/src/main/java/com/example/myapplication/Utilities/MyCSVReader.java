@@ -24,23 +24,26 @@ public class MyCSVReader {
                 break;
             }
         }
+        linesNumber=0;
         path+="/"+name;
         try {
             reader = new CSVReader(new FileReader(path));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            return;
         }
-        linesNumber=0;
         String[] line;
         while (true) {
             try {
                 line=reader.readNext();
-                if(line == null) break;
-                if(linesNumber==0){
-                    MainActivity.TerminalID = Integer.parseInt(line[1]);
-                }
             } catch (IOException e) {
                 e.printStackTrace();
+                linesNumber=0;
+                break;
+            }
+            if(line == null) break;
+            if(linesNumber==0){
+                MainActivity.TerminalID = Integer.parseInt(line[1]);
             }
             linesNumber++;
         }
@@ -52,7 +55,7 @@ public class MyCSVReader {
     }
 
     public void resetFile() throws IOException {
-        reader.close();
+        if(reader!=null) reader.close();
         reader = new CSVReader(new FileReader(path));
     }
 

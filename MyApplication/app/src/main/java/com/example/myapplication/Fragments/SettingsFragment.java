@@ -1,10 +1,9 @@
-package com.example.myapplication.ui.settings;
+package com.example.myapplication.Fragments;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
-import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import com.example.myapplication.MQTTConnection.MQTTInfo;
 import com.example.myapplication.MainActivity;

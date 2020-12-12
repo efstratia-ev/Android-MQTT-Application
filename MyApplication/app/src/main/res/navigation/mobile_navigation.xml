@@ -7,13 +7,13 @@
 
     <fragment
             android:id="@+id/nav_home"
-            android:name="com.example.myapplication.ui.home.HomeFragment"
+            android:name="com.example.myapplication.Fragments.HomeFragment"
             android:label="@string/menu_home"
             tools:layout="@layout/fragment_home"/>
 
     <fragment
             android:id="@+id/nav_settings"
-            android:name="com.example.myapplication.ui.settings.SettingsFragment"
+            android:name="com.example.myapplication.Fragments.SettingsFragment"
             android:label="@string/menu_settings"
             tools:layout="@layout/fragment_settings"/>
 </navigation>

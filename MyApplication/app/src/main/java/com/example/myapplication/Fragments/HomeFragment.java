@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.home;
+package com.example.myapplication.Fragments;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -9,17 +9,15 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+import android.widget.Toast;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
 import com.example.myapplication.MQTTConnection.MQTTPublisher;
 import com.example.myapplication.MainActivity;
 import com.example.myapplication.R;
 import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class HomeFragment extends Fragment {
 
