@@ -30,6 +30,10 @@ public class HeatMapUtil {
         HeatMapUtil.readCSVandProduceHeatMap("OutputData/all_vehicles.csv",heatMapRSSI,heatMapThroughput);
         HeatMapUtil.combineMapAndHeatMap("InputData/Map.png","OutputData/rssi.png","OutputData/heatmapRSSI.png");
         HeatMapUtil.combineMapAndHeatMap("InputData/Map.png","OutputData/throughput.png","OutputData/heatmapThroughput.png");
+
+
+        //Dummy Funtion
+        readCSVDummyFunction("OutputData/vehicle_26.csv",heatMapRSSI,heatMapThroughput);
     }
 
     public static void combineMapAndHeatMap(String inputFile1,String inputFile2,String outputFile) throws Exception{
@@ -71,5 +75,36 @@ public class HeatMapUtil {
         }
         heatMapRSSI.makeHeatMapPNG("OutputData/rssi.png");
         heatMapThroughput.makeHeatMapPNG("OutputData/throughput.png");
+    }
+
+    static public void readCSVDummyFunction(String csvFilename,HeatMap heatMapRSSI,HeatMap heatMapThroughput) throws Exception{
+        String line = "";
+        String cvsSplitBy = ",";
+        final double r=6371000,t=1.0;
+
+        BufferedReader br = new BufferedReader(new FileReader(csvFilename));
+        while ((line = br.readLine()) != null) {
+            // use comma as separator
+            String[] vehicleData = line.split(cvsSplitBy);
+            //timestep:0 id:1 lat(y):2 lon(x):3 angle:4 speed:5 rssi:6 throughput:7
+            double latStart=Double.parseDouble(vehicleData[2]),longStart=Double.parseDouble(vehicleData[3]),
+                    angle=Double.parseDouble(vehicleData[4]),speed=Double.parseDouble(vehicleData[5]),d;
+            d=t*speed/r;
+            double latEnd=formulaLat(Math.toRadians(d),Math.toRadians(latStart),Math.toRadians(angle)),
+                    longEnd=formulaLong(Math.toRadians(d),Math.toRadians(longStart),Math.toRadians(latStart),Math.toRadians(latEnd),Math.toRadians(angle));
+            System.out.format("Predictions are -- latS: %.6f and lonS:  %.6f -- latE:  %.6f and lonE:  %.6f\n",latStart,longStart,latEnd,longEnd);
+            System.out.format("Rssi: %.6f and Throughput %.6f\n",heatMapRSSI.getValue(latEnd,longEnd),heatMapThroughput.getValue(latEnd,longEnd));
+
+            //System.out.println( vehicleData[0]+","+vehicleData[2] + "," + vehicleData[3] + "," + vehicleData[6] + ","+  vehicleData[7]+"\n");
+
+        }
+    }
+
+    static public double formulaLat(double d, double lat, double angle){
+        return Math.toDegrees(Math.asin(Math.sin(lat)*Math.cos(d)+Math.cos(lat)*Math.sin(d)*Math.cos(angle)));
+    }
+
+    static public double formulaLong(double d, double lon,double latStart,double latEnd, double angle){
+        return Math.toDegrees(lon+Math.atan2(Math.sin(angle)*Math.sin(d)*Math.cos(latStart),Math.cos(d)-Math.sin(latStart)*Math.sin(latEnd)));
     }
 }

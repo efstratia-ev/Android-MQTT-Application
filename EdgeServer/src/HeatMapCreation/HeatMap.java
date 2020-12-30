@@ -81,4 +81,11 @@ public class HeatMap {
         heapMapCreator(filename);
     }
 
+    public double getValue(double lat,double lon){
+        if(this.isInGrid(lat,lon)){
+            return this.gridValues[getRow(lat)][getColumn(lon)];
+        }
+        return 0;
+    }
+
 }
