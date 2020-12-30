@@ -13,16 +13,13 @@ import com.example.myapplication.MainActivity;
 import static androidx.core.content.ContextCompat.startActivity;
 
 public class Connection {
-    public static boolean isConnected(final Context context) {
+    public static void isConnected(final Context context) {
         ConnectivityManager connectivityManager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo wifiInfo = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         NetworkInfo mobileInfo = connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-        if ((wifiInfo != null && wifiInfo.isConnected()) || (mobileInfo != null && mobileInfo.isConnected())) {
-            return true;
-        } else {
+        if (!((wifiInfo != null && wifiInfo.isConnected()) || (mobileInfo != null && mobileInfo.isConnected()))) {
             showDialog();
-            return false;
         }
     }
     private static void showDialog() {
@@ -31,7 +28,8 @@ public class Connection {
                 .setCancelable(false)
                 .setPositiveButton("Connect to WIFI", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        MainActivity.context.startActivity(new Intent(Settings.ACTION_WIFI_SETTINGS));
+                        dialog.dismiss();
+                        ((Activity)MainActivity.context).startActivityForResult(new Intent(Settings.ACTION_WIFI_SETTINGS),0);
                     }
                 })
                 .setNegativeButton("Exit", new DialogInterface.OnClickListener() {

@@ -7,12 +7,14 @@
                 android:key="IP"
                 android:title="IP address"
                 app:useSimpleSummaryProvider="true"
+                android:defaultValue="192.168.1.12"
         />
         <EditTextPreference
                 android:key="Port"
                 android:title="Port"
                 app:useSimpleSummaryProvider="true"
                 android:inputType="number"
+                android:defaultValue="1883"
         />
     </PreferenceCategory>
 

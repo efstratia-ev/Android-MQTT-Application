@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Android Terminal</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Terminal</string>
@@ -11,5 +11,4 @@
     <string name="menu_settings">Settings</string>
     <string name="menu_exit">Exit</string>
     <string name="settings">Settings</string>
-    <string name="IP"/>
 </resources>
