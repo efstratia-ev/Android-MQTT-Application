@@ -3,6 +3,7 @@ package HeatMapCreation;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 
@@ -34,6 +35,7 @@ public class HeatMapUtil {
 
         //Dummy Funtion
         readCSVDummyFunction("OutputData/vehicle_26.csv",heatMapRSSI,heatMapThroughput);
+        readCSVDummyFunction("OutputData/vehicle_27.csv",heatMapRSSI,heatMapThroughput);
     }
 
     public static void combineMapAndHeatMap(String inputFile1,String inputFile2,String outputFile) throws Exception{
@@ -81,30 +83,52 @@ public class HeatMapUtil {
         String line = "";
         String cvsSplitBy = ",";
         final double r=6371000,t=1.0;
+        int vehicleId;
+        boolean firstTime;
 
         BufferedReader br = new BufferedReader(new FileReader(csvFilename));
+        ArrayList<PredictionData> predictionData = new ArrayList<>();
+        PredictionData currentVehicle;
         while ((line = br.readLine()) != null) {
-            // use comma as separator
             String[] vehicleData = line.split(cvsSplitBy);
             //timestep:0 id:1 lat(y):2 lon(x):3 angle:4 speed:5 rssi:6 throughput:7
+            vehicleId=Integer.parseInt(vehicleData[1]);
+            currentVehicle=containsId(predictionData,vehicleId);
+            firstTime=false;
+            if(currentVehicle==null) {
+                currentVehicle=new PredictionData(vehicleId);
+                predictionData.add(currentVehicle);
+                firstTime=true;
+            }
+
             double latStart=Double.parseDouble(vehicleData[2]),longStart=Double.parseDouble(vehicleData[3]),
-                    angle=Double.parseDouble(vehicleData[4]),speed=Double.parseDouble(vehicleData[5]),d;
-            d=t*speed/r;
-            double latEnd=formulaLat(Math.toRadians(d),Math.toRadians(latStart),Math.toRadians(angle)),
-                    longEnd=formulaLong(Math.toRadians(d),Math.toRadians(longStart),Math.toRadians(latStart),Math.toRadians(latEnd),Math.toRadians(angle));
+                    angle=Double.parseDouble(vehicleData[4]),speed=Double.parseDouble(vehicleData[5]),d=t*speed/r;
+            double latEnd=currentVehicle.formulaLat(Math.toRadians(d),Math.toRadians(latStart),Math.toRadians(angle)),
+                    longEnd=currentVehicle.formulaLong(Math.toRadians(d),Math.toRadians(longStart),Math.toRadians(latStart),Math.toRadians(latEnd),Math.toRadians(angle));
             System.out.format("Predictions are -- latS: %.6f and lonS:  %.6f -- latE:  %.6f and lonE:  %.6f\n",latStart,longStart,latEnd,longEnd);
             System.out.format("Rssi: %.6f and Throughput %.6f\n",heatMapRSSI.getValue(latEnd,longEnd),heatMapThroughput.getValue(latEnd,longEnd));
 
+
+            if(!firstTime) {
+                currentVehicle.updateRealData(latStart,longStart,heatMapRSSI.getValue(latStart,longStart),heatMapThroughput.getValue(latStart,longStart));
+                currentVehicle.updateSum(currentVehicle.distance(latStart,longStart,currentVehicle.getPredictedLat(),currentVehicle.getPredictedLong()));
+                currentVehicle.updateCount();
+                System.out.println("*** database insert ***");
+            }
+            currentVehicle.setTimeStep(Double.parseDouble(vehicleData[0]));
+            currentVehicle.updatePredictedData(latEnd,longEnd,heatMapRSSI.getValue(latEnd,longEnd),heatMapThroughput.getValue(latEnd,longEnd));
+
             //System.out.println( vehicleData[0]+","+vehicleData[2] + "," + vehicleData[3] + "," + vehicleData[6] + ","+  vehicleData[7]+"\n");
-
         }
+        calculateMeanErrors(predictionData);
     }
 
-    static public double formulaLat(double d, double lat, double angle){
-        return Math.toDegrees(Math.asin(Math.sin(lat)*Math.cos(d)+Math.cos(lat)*Math.sin(d)*Math.cos(angle)));
+    public static PredictionData containsId(ArrayList<PredictionData> predictionData,final int id){
+        return predictionData.stream().filter(vehicle -> id == vehicle.getDeviceId()).findFirst().orElse(null);
     }
 
-    static public double formulaLong(double d, double lon,double latStart,double latEnd, double angle){
-        return Math.toDegrees(lon+Math.atan2(Math.sin(angle)*Math.sin(d)*Math.cos(latStart),Math.cos(d)-Math.sin(latStart)*Math.sin(latEnd)));
+    public static void calculateMeanErrors(ArrayList<PredictionData> predictionData){
+        predictionData.stream().forEach(vehicle -> {System.out.println("Mean Error of Vehicle "+vehicle.getDeviceId()+" is : "+vehicle.getMeanError());});
     }
+
 }
