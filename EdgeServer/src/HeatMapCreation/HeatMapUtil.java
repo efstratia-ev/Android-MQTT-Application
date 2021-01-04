@@ -85,6 +85,7 @@ public class HeatMapUtil {
         final double r=6371000,t=1.0;
         int vehicleId;
         boolean firstTime;
+        DatabaseUtil vehicleDatabase=new DatabaseUtil();
 
         BufferedReader br = new BufferedReader(new FileReader(csvFilename));
         ArrayList<PredictionData> predictionData = new ArrayList<>();
@@ -114,6 +115,7 @@ public class HeatMapUtil {
                 currentVehicle.updateSum(currentVehicle.distance(latStart,longStart,currentVehicle.getPredictedLat(),currentVehicle.getPredictedLong()));
                 currentVehicle.updateCount();
                 System.out.println("*** database insert ***");
+                vehicleDatabase.insert(currentVehicle);
             }
             currentVehicle.setTimeStep(Double.parseDouble(vehicleData[0]));
             currentVehicle.updatePredictedData(latEnd,longEnd,heatMapRSSI.getValue(latEnd,longEnd),heatMapThroughput.getValue(latEnd,longEnd));
@@ -121,6 +123,7 @@ public class HeatMapUtil {
             //System.out.println( vehicleData[0]+","+vehicleData[2] + "," + vehicleData[3] + "," + vehicleData[6] + ","+  vehicleData[7]+"\n");
         }
         calculateMeanErrors(predictionData);
+        vehicleDatabase.closeConnection();
     }
 
     public static PredictionData containsId(ArrayList<PredictionData> predictionData,final int id){

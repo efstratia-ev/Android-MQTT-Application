@@ -85,4 +85,31 @@ public class PredictionData {
         }
     }
 
+    public double getTimeStep() {
+        return timeStep;
+    }
+
+    public double getRealLat() {
+        return realLat;
+    }
+
+    public double getRealLong() {
+        return realLong;
+    }
+
+    public double getRealRssi() {
+        return realRssi;
+    }
+
+    public double getRealThroughput() {
+        return realThroughput;
+    }
+
+    public double getPredictedRssi() {
+        return predictedRssi;
+    }
+
+    public double getPredictedThroughput() {
+        return predictedThroughput;
+    }
 }

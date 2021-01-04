@@ -22,18 +22,16 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Vehicle` (
   `device_id` INT NOT NULL,
-  `timestep` INT NOT NULL,
+  `timestep` DOUBLE NOT NULL,
   `real_lat` DOUBLE NOT NULL,
   `real_long` DOUBLE NOT NULL,
   `predicted_lat` DOUBLE NOT NULL,
   `predicted_long` DOUBLE NOT NULL,
-  `real_rsssi` FLOAT NOT NULL,
-  `real_throughput` FLOAT NOT NULL,
-  `predicted_rssi` FLOAT NOT NULL,
-  `predicted_throughput` FLOAT NOT NULL,
-  `speed` DOUBLE NULL,
-  `angle` DOUBLE NULL,
-  PRIMARY KEY (`device_id`))
+  `real_rsssi` DOUBLE NOT NULL,
+  `real_throughput` DOUBLE NOT NULL,
+  `predicted_rssi` DOUBLE NOT NULL,
+  `predicted_throughput` DOUBLE NOT NULL,
+  PRIMARY KEY (`device_id`,`timestep`))
 ENGINE = InnoDB;
 
 
