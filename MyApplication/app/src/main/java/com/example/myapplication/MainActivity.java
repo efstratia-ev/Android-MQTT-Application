@@ -15,6 +15,7 @@ import androidx.core.view.GravityCompat;
 import androidx.preference.PreferenceManager;
 import com.example.myapplication.MQTTConnection.MQTTInfo;
 import com.example.myapplication.Utilities.MyCSVReader;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -24,10 +25,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import java.util.ArrayList;
+
 import static com.example.myapplication.Utilities.Connection.isConnected;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-
+    public static ArrayList<MarkerOptions> markersArray;
     public static boolean restart=true;
     public static int max;
     public static int measurementsSend;

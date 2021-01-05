@@ -72,12 +72,12 @@
         "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/res/layout/fragment_settings.xml"
     },
     {
-        "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/drawable-xhdpi_seahorse_background.png.flat",
-        "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/generated/res/pngs/debug/drawable-xhdpi/seahorse_background.png"
-    },
-    {
         "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/mipmap-mdpi_seahorse_foreground.png.flat",
         "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/res/mipmap-mdpi/seahorse_foreground.png"
+    },
+    {
+        "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/drawable-xhdpi_seahorse_background.png.flat",
+        "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/generated/res/pngs/debug/drawable-xhdpi/seahorse_background.png"
     },
     {
         "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/drawable-xxhdpi_settings_icon.png.flat",
@@ -96,8 +96,20 @@
         "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/res/mipmap-xxhdpi/seahorse_foreground.png"
     },
     {
+        "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/drawable-xxxhdpi_map.png.flat",
+        "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/generated/res/pngs/debug/drawable-xxxhdpi/map.png"
+    },
+    {
         "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/drawable-xhdpi_map.png.flat",
+        "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/generated/res/pngs/debug/drawable-xhdpi/map.png"
+    },
+    {
+        "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/drawable-ldpi_map.png.flat",
+        "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/generated/res/pngs/debug/drawable-ldpi/map.png"
     },
     {
         "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/drawable-xxhdpi_seahorse_background.png.flat",
@@ -120,6 +132,10 @@
         "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/generated/res/pngs/debug/drawable-xxhdpi/exit_icon.png"
     },
     {
+        "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/drawable-mdpi_map.png.flat",
+        "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/generated/res/pngs/debug/drawable-mdpi/map.png"
+    },
+    {
         "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/drawable-hdpi_settings_icon.png.flat",
         "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/generated/res/pngs/debug/drawable-hdpi/settings_icon.png"
     },
@@ -138,6 +154,14 @@
     {
         "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/drawable-hdpi_home_icon.png.flat",
         "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/generated/res/pngs/debug/drawable-hdpi/home_icon.png"
+    },
+    {
+        "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/drawable-anydpi-v21_map.xml.flat",
+        "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/generated/res/pngs/debug/drawable-anydpi-v21/map.xml"
+    },
+    {
+        "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/drawable-xxhdpi_map.png.flat",
+        "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/generated/res/pngs/debug/drawable-xxhdpi/map.png"
     },
     {
         "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
@@ -190,6 +214,10 @@
     {
         "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
         "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/layout_fragment_maps.xml.flat",
+        "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/res/layout/fragment_maps.xml"
     },
     {
         "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/mipmap-xxhdpi_seahorse_round.png.flat",
@@ -270,5 +298,9 @@
     {
         "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_seahorse_foreground.png.flat",
         "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/res/mipmap-xxxhdpi/seahorse_foreground.png"
+    },
+    {
+        "merged": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/intermediates/res/merged/debug/drawable-hdpi_map.png.flat",
+        "source": "/home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/build/generated/res/pngs/debug/drawable-hdpi/map.png"
     }
 ]
