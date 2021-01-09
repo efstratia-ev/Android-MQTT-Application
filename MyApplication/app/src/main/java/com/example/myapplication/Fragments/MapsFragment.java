@@ -2,6 +2,7 @@ package com.example.myapplication.Fragments;
 
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.os.Handler;
 import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -25,7 +26,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
 
-import static com.example.myapplication.MainActivity.markersArray;
+import static com.example.myapplication.MainActivity.markersList;
+import static com.example.myapplication.Utilities.Connection.isConnected;
 
 public class MapsFragment extends Fragment implements
         GoogleMap.OnMarkerClickListener,
@@ -61,24 +63,35 @@ public class MapsFragment extends Fragment implements
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        SupportMapFragment mapFragment =
+        final SupportMapFragment mapFragment =
                 (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-        if (mapFragment != null) {
-            mapFragment.getMapAsync(this);
-        }
+
+        final Handler handler=new Handler();
+        final OnMapReadyCallback callback=this;
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if (mapFragment != null) {
+                    mapFragment.getMapAsync(callback);
+                }
+                handler.postDelayed(this,500);
+            }
+        },500);
     }
 
     @Override
     public void onMapReady(GoogleMap map) {
         Marker marker;
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
-        for(int i = 0 ; i < markersArray.size() ; i++) {
-            marker=map.addMarker(markersArray.get(i));
+        if(markersList.isEmpty()) return;
+        while(!markersList.isEmpty()) {
+            marker=map.addMarker(markersList.remove());
             builder.include(marker.getPosition());
         }
         LatLngBounds bounds = builder.build();
         int padding = 0; // offset from edges of the map in pixels
         CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
+        map.animateCamera( CameraUpdateFactory.zoomTo( 2.0f ) );
         map.animateCamera(cu);
         map.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
 

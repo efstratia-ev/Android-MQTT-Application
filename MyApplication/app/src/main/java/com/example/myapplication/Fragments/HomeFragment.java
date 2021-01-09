@@ -37,20 +37,29 @@ public class HomeFragment extends Fragment {
             txtView.setVisibility(View.GONE);
         }
         final Button btn = (Button)view.findViewById(R.id.btnShow);
-        if(i!=0) btn.setText("Stop Progress");
+        if(i!=0) btn.setText("Pause Progress");
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (i!=0) {
+                if(i==MainActivity.max){
                     i=0;
-                    btn.setText("Start Progress");
+                    btn.setText("Restart Progress");
+                }
+                else if (i!=0 && btn.getText().equals("Pause Progress")) {
+                    btn.setText("Continue Progress");
                     MainActivity.restart=true;
-                    progressBar.setVisibility(View.GONE); // to hide
-                    txtView.setVisibility(View.GONE);
                 }
                 else {
+                    if(i==0){
+                        try {
+                            MainActivity.csvReader.resetFile();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                            return;
+                        }
+                    }
                     MainActivity.restart=false;
-                    btn.setText("Stop Progress");
+                    btn.setText("Pause Progress");
                     progressBar.setVisibility(View.VISIBLE); //to show
                     txtView.setVisibility(View.VISIBLE);
                     Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
@@ -61,12 +70,6 @@ public class HomeFragment extends Fragment {
                     });
                     Thread t=new Thread(){
                         public void run() {
-                            try {
-                                MainActivity.csvReader.resetFile();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                                return;
-                            }
                             MQTTPublisher MQTTPub = null;
                             try {
                                 MQTTPub=new MQTTPublisher(MainActivity.context);

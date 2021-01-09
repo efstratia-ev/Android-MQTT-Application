@@ -26,11 +26,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
+import java.util.Queue;
 
 import static com.example.myapplication.Utilities.Connection.isConnected;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-    public static ArrayList<MarkerOptions> markersArray;
+    public static Queue<MarkerOptions> markersList;
     public static boolean restart=true;
     public static int max;
     public static int measurementsSend;
@@ -73,9 +74,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void run() {
                 isConnected(context);
-                handler.postDelayed(this,3000);
+                handler.postDelayed(this,1000);
             }
-        },3000);
+        },1000);
 
     }
     @Override

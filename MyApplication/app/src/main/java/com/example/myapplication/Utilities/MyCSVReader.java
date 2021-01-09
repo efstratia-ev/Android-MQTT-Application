@@ -10,9 +10,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.opencsv.CSVReader;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Objects;
+import java.util.*;
 
 public class MyCSVReader {
     int linesNumber;
@@ -38,7 +36,7 @@ public class MyCSVReader {
             return;
         }
         String[] line;
-        MainActivity.markersArray = new ArrayList<MarkerOptions>();
+        MainActivity.markersList = new LinkedList<>();
         while (true) {
             try {
                 line=reader.readNext();
@@ -50,8 +48,6 @@ public class MyCSVReader {
             if(line == null) break;
             if(linesNumber==0)
                 MainActivity.TerminalID = Integer.parseInt(line[1]);
-            else
-                MainActivity.markersArray.add(createMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"RSSI:"+line[6]+"\nThroughput: "+line[7]));
             linesNumber++;
         }
 
@@ -66,7 +62,9 @@ public class MyCSVReader {
     }
 
     public String readLine() throws IOException {
-        return Arrays.toString(reader.readNext());
+        String[] line=reader.readNext();
+        MainActivity.markersList.add(createMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"RSSI:"+line[6]+"\nThroughput: "+line[7]));
+        return Arrays.toString(line);
     }
 
     public void resetFile() throws IOException {
