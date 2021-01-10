@@ -2,6 +2,7 @@ package com.example.myapplication.MQTTConnection;
 
 import android.content.Context;
 import com.example.myapplication.MainActivity;
+import com.example.myapplication.Utilities.CreateMarkers;
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
@@ -22,8 +23,22 @@ public class MQTTSubscriber implements MqttCallback {
         options.setCleanSession(true);
 
         client.setCallback(this);
-        this.client.connect(options);
-        this.client.subscribe(this.subscriptionTopic,qos);
+        client.connect(options);
+        client.connect(options,new IMqttActionListener(){
+            @Override
+            public void onSuccess(IMqttToken asyncActionToken) {
+                try {
+                    client.subscribe(subscriptionTopic,qos);
+                } catch (MqttException e) {
+                    e.printStackTrace();
+                }
+            }
+            @Override
+            public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+
+            }
+        });
+
     }
 
     @Override
@@ -33,7 +48,8 @@ public class MQTTSubscriber implements MqttCallback {
 
     @Override
     public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {
-        System.out.println(topic + ": " + mqttMessage);
+        String[] line = mqttMessage.toString().replace("[","").replace("]","").split(", ");
+        CreateMarkers.createMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"RSSI:"+line[6]+"\nThroughput: "+line[7],"#3D772C");
     }
 
     @Override

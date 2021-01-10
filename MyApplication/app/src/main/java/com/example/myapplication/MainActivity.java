@@ -14,7 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.preference.PreferenceManager;
 import com.example.myapplication.MQTTConnection.MQTTInfo;
+import com.example.myapplication.MQTTConnection.MQTTSubscriber;
 import com.example.myapplication.Utilities.MyCSVReader;
+import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
@@ -24,6 +26,7 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.util.ArrayList;
 import java.util.Queue;
@@ -48,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context=this;
+        MapsInitializer.initialize(this);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -78,6 +82,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         },1000);
 
+        try {
+            MQTTSubscriber MQTTSub=new MQTTSubscriber(context);
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

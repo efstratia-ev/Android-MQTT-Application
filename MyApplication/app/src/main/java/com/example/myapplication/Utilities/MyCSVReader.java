@@ -1,11 +1,11 @@
 package com.example.myapplication.Utilities;
 
 import android.content.Context;
-import android.widget.Toast;
+import android.graphics.Color;
 import com.example.myapplication.MainActivity;
-import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.opencsv.CSVReader;
 
@@ -53,17 +53,11 @@ public class MyCSVReader {
 
     }
 
-    protected MarkerOptions createMarker(double latitude, double longitude, String title, String snippet) {
-        return new MarkerOptions()
-                .position(new LatLng(latitude, longitude))
-                .anchor(0.5f, 0.5f)
-                .title(title)
-                .snippet(snippet);
-    }
+
 
     public String readLine() throws IOException {
         String[] line=reader.readNext();
-        MainActivity.markersList.add(createMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"RSSI:"+line[6]+"\nThroughput: "+line[7]));
+        CreateMarkers.createMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"RSSI:"+line[6]+"\nThroughput: "+line[7],"#ff2299");
         return Arrays.toString(line);
     }
 

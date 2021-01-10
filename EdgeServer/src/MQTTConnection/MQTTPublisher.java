@@ -14,7 +14,7 @@ public class MQTTPublisher {
     MqttClient client;
     MqttConnectOptions options;
 
-    MQTTPublisher() throws MqttException {
+    public MQTTPublisher() throws MqttException {
         clientId=MQTTInfo.getClient()+"pub";
         Topics=MQTTInfo.getPublishingTopics();
 
