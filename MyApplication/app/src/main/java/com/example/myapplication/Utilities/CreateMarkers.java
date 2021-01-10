@@ -8,12 +8,23 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 abstract public class CreateMarkers {
-    public static void createMarker(double latitude, double longitude, String title, String snippet,String color) {
+    static String color="#ff2299";
+    static String predictionColor="#3D772C";
+    public static void createMarker(double latitude, double longitude, String title, String snippet) {
         MainActivity.markersList.add(new MarkerOptions()
                 .position(new LatLng(latitude, longitude))
                 .anchor(0.5f, 0.5f)
                 .title(title)
                 .icon(getMarkerIcon(color))
+                .snippet(snippet));
+    }
+
+    public static void createPredictionMarker(double latitude, double longitude, String title, String snippet) {
+        MainActivity.predictionMarkersList.add(new MarkerOptions()
+                .position(new LatLng(latitude, longitude))
+                .anchor(0.5f, 0.5f)
+                .title(title)
+                .icon(getMarkerIcon(predictionColor))
                 .snippet(snippet));
     }
 

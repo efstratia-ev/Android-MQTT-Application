@@ -36,7 +36,6 @@ public class MyCSVReader {
             return;
         }
         String[] line;
-        MainActivity.markersList = new LinkedList<>();
         while (true) {
             try {
                 line=reader.readNext();
@@ -57,7 +56,7 @@ public class MyCSVReader {
 
     public String readLine() throws IOException {
         String[] line=reader.readNext();
-        CreateMarkers.createMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"RSSI:"+line[6]+"\nThroughput: "+line[7],"#ff2299");
+        CreateMarkers.createMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"RSSI:"+line[6]+"\nThroughput: "+line[7]);
         return Arrays.toString(line);
     }
 

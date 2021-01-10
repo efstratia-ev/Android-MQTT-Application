@@ -1,5 +1,7 @@
 package Predictions;
 
+import java.util.Arrays;
+
 public class PredictionData {
     private double timeStep;
     private int deviceId;
@@ -22,7 +24,7 @@ public class PredictionData {
 
     public String getInfo(){
         String[] info={String.valueOf(timeStep), String.valueOf(deviceId), String.valueOf(predictedLat), String.valueOf(predictedLong), String.valueOf(predictedRssi), String.valueOf(predictedThroughput)};
-        return info.toString();
+        return Arrays.toString(info);
     }
 
     public void updatePredictedData(double predictedLat,double predictedLong,double predictedRssi,double predictedThroughput){
@@ -47,6 +49,9 @@ public class PredictionData {
         return deviceId;
     }
 
+    public String getIdAsString() {
+        return String.valueOf(deviceId);
+    }
     public double getPredictedLat() {
         return predictedLat;
     }

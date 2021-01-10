@@ -46,7 +46,7 @@ public class PredictionDataUtil {
              currentVehicle.updateCount();
             // System.out.println("*** database insert ***");
              vehicleDatabase.insert(currentVehicle);
-             MQTTPub.publish_message(currentVehicle.getInfo());
+             MQTTPub.publish_message(currentVehicle.getInfo(),currentVehicle.getIdAsString());
          }
 
         currentVehicle.setTimeStep(Double.parseDouble(vehicleData[0]));

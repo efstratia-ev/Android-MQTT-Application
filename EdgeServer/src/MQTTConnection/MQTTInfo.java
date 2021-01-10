@@ -23,6 +23,13 @@ public final class MQTTInfo {
         return PublishingTopics;
     }
 
+    public static String getPublishingTopic(String ID){
+        for(String topic : PublishingTopics){
+            if(topic.endsWith(ID)) return topic;
+        }
+        return null;
+    }
+
     public static int[] getQos() {
         return qos;
     }

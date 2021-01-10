@@ -34,9 +34,7 @@ public class MQTTSubscriber implements MqttCallback {
                 }
             }
             @Override
-            public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
-
-            }
+            public void onFailure(IMqttToken asyncActionToken, Throwable exception) {}
         });
 
     }
@@ -49,7 +47,7 @@ public class MQTTSubscriber implements MqttCallback {
     @Override
     public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {
         String[] line = mqttMessage.toString().replace("[","").replace("]","").split(", ");
-        CreateMarkers.createMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"RSSI:"+line[6]+"\nThroughput: "+line[7],"#3D772C");
+        CreateMarkers.createPredictionMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"RSSI:"+line[4]+"\nThroughput: "+line[5]);
     }
 
     @Override

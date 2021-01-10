@@ -30,12 +30,14 @@ import androidx.appcompat.widget.Toolbar;
 import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.Queue;
 
 import static com.example.myapplication.Utilities.Connection.isConnected;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-    public static Queue<MarkerOptions> markersList;
+    public static Queue<MarkerOptions> markersList=new LinkedList<>();
+    public static Queue<MarkerOptions> predictionMarkersList=new LinkedList<>();
     public static boolean restart=true;
     public static int max;
     public static int measurementsSend;

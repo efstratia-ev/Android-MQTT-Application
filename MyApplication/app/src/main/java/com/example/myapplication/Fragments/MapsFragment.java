@@ -27,12 +27,13 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 
 import static com.example.myapplication.MainActivity.markersList;
+import static com.example.myapplication.MainActivity.predictionMarkersList;
 import static com.example.myapplication.Utilities.Connection.isConnected;
 
 public class MapsFragment extends Fragment implements
         GoogleMap.OnMarkerClickListener,
         OnMapReadyCallback {
-
+    LatLngBounds.Builder builder = new LatLngBounds.Builder();
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -63,10 +64,13 @@ public class MapsFragment extends Fragment implements
     @Override
     public void onMapReady(GoogleMap map) {
         Marker marker;
-        LatLngBounds.Builder builder = new LatLngBounds.Builder();
-        if(markersList.isEmpty()) return;
+        if(markersList.isEmpty() && predictionMarkersList.isEmpty()) return;
         while(!markersList.isEmpty()) {
             marker=map.addMarker(markersList.remove());
+            builder.include(marker.getPosition());
+        }
+        while(!predictionMarkersList.isEmpty()) {
+            marker=map.addMarker(predictionMarkersList.remove());
             builder.include(marker.getPosition());
         }
         LatLngBounds bounds = builder.build();
