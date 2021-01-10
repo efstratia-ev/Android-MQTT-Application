@@ -17,6 +17,8 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.io.IOException;
 
+import static com.example.myapplication.MainActivity.MQTTPub;
+
 public class HomeFragment extends Fragment {
 
     @SuppressLint("StaticFieldLeak")
@@ -70,13 +72,6 @@ public class HomeFragment extends Fragment {
                     });
                     Thread t=new Thread(){
                         public void run() {
-                            MQTTPublisher MQTTPub = null;
-                            try {
-                                MQTTPub=new MQTTPublisher(MainActivity.context);
-                            } catch (MqttException e) {
-                                e.printStackTrace();
-                                return;
-                            }
                             while (i < MainActivity.measurementsSend && !MainActivity.restart) {
                                 try {
                                     String toSend=MainActivity.csvReader.readLine();

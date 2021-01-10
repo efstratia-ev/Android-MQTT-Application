@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class PredictionDataUtil {
      ArrayList<PredictionData> predictionData = new ArrayList<>();
      DatabaseUtil vehicleDatabase=new DatabaseUtil();
+    MQTTPublisher MQTTPub=new MQTTPublisher();
 
     public PredictionDataUtil() throws Exception {
     }
@@ -45,7 +46,6 @@ public class PredictionDataUtil {
              currentVehicle.updateCount();
             // System.out.println("*** database insert ***");
              vehicleDatabase.insert(currentVehicle);
-             MQTTPublisher MQTTPub=new MQTTPublisher();
              MQTTPub.publish_message(currentVehicle.getInfo());
          }
 

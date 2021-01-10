@@ -1,11 +1,7 @@
 package HeatMapCreation;
-
-import Predictions.PredictionData;
-
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
-import java.util.ArrayList;
 import javax.imageio.ImageIO;
 
 

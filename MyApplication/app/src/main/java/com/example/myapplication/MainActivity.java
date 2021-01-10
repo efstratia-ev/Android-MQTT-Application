@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.preference.PreferenceManager;
 import com.example.myapplication.MQTTConnection.MQTTInfo;
+import com.example.myapplication.MQTTConnection.MQTTPublisher;
 import com.example.myapplication.MQTTConnection.MQTTSubscriber;
 import com.example.myapplication.Utilities.MyCSVReader;
 import com.google.android.gms.maps.MapsInitializer;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @SuppressLint("StaticFieldLeak")
     public static Context context;
     public static MyCSVReader csvReader;
+    public static MQTTPublisher MQTTPub = null;
     private AppBarConfiguration mAppBarConfiguration;
     DrawerLayout drawer;
     NavigationView navigationView;
@@ -86,6 +88,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             MQTTSubscriber MQTTSub=new MQTTSubscriber(context);
         } catch (MqttException e) {
             e.printStackTrace();
+        }
+        try {
+            MQTTPub=new MQTTPublisher(MainActivity.context);
+        } catch (MqttException e) {
+            e.printStackTrace();
+            return;
         }
     }
     @Override
