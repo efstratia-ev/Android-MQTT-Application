@@ -2013,6 +2013,8 @@ id nav_home
 id nav_host_fragment
 id nav_host_fragment_container
 id nav_maps
+id nav_prediction
+id nav_real
 id nav_settings
 id nav_view
 id navigation_header_container
@@ -2259,6 +2261,8 @@ layout design_text_input_start_icon
 layout expand_button
 layout fragment_home
 layout fragment_maps
+layout fragment_predictions
+layout fragment_real
 layout fragment_settings
 layout image_frame
 layout mtrl_alert_dialog
@@ -2416,6 +2420,8 @@ string material_slider_range_start
 string menu_exit
 string menu_home
 string menu_maps
+string menu_prediction
+string menu_real
 string menu_settings
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description

@@ -63,21 +63,25 @@ public class MapsFragment extends Fragment implements
 
     @Override
     public void onMapReady(GoogleMap map) {
+        map.setMinZoomPreference(15);
+        map.setMaxZoomPreference(30);
+        map.setBuildingsEnabled(true);
         Marker marker;
         if(markersList.isEmpty() && predictionMarkersList.isEmpty()) return;
-        while(!markersList.isEmpty()) {
-            marker=map.addMarker(markersList.remove());
+        for(MarkerOptions M:markersList) {
+            marker=map.addMarker(M);
             builder.include(marker.getPosition());
         }
-        while(!predictionMarkersList.isEmpty()) {
-            marker=map.addMarker(predictionMarkersList.remove());
+        for(MarkerOptions M:predictionMarkersList) {
+            marker=map.addMarker(M);
             builder.include(marker.getPosition());
         }
         LatLngBounds bounds = builder.build();
         int padding = 0; // offset from edges of the map in pixels
         CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
-        map.animateCamera( CameraUpdateFactory.zoomTo( 2.0f ) );
-        map.animateCamera(cu);
+      //  map.animateCamera( CameraUpdateFactory.zoomTo( 25.0f ) );
+       // map.animateCamera(cu);
+        map.moveCamera(cu);
         map.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
 
             @Override

@@ -10,6 +10,8 @@
     <string name="menu_home">Home</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_maps">Google Maps</string>
+    <string name="menu_real">Real rout Map</string>
+    <string name="menu_prediction">Predictions Map</string>
     <string name="menu_exit">Exit</string>
     <string name="settings">Settings</string>
 </resources>

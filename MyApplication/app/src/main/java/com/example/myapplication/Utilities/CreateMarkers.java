@@ -23,7 +23,7 @@ abstract public class CreateMarkers {
         MainActivity.predictionMarkersList.add(new MarkerOptions()
                 .position(new LatLng(latitude, longitude))
                 .anchor(0.5f, 0.5f)
-                .title(title)
+                .title("Prediction "+title)
                 .icon(getMarkerIcon(predictionColor))
                 .snippet(snippet));
     }
