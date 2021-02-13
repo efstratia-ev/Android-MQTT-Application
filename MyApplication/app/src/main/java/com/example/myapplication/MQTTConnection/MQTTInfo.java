@@ -4,7 +4,7 @@ package com.example.myapplication.MQTTConnection;
 import com.example.myapplication.MainActivity;
 
 public final class MQTTInfo {
-    private static String IP="192.168.1.12";
+    private static String IP="10.0.2.2";
     private static int Port=1883;
 
     public static void setIP(String IP){

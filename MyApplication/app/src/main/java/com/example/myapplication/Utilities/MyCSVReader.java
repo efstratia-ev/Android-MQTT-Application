@@ -1,13 +1,16 @@
 package com.example.myapplication.Utilities;
 
 import android.content.Context;
-import android.widget.Toast;
+import android.graphics.Color;
 import com.example.myapplication.MainActivity;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.opencsv.CSVReader;
 
 import java.io.*;
-import java.util.Arrays;
-import java.util.Objects;
+import java.util.*;
 
 public class MyCSVReader {
     int linesNumber;
@@ -42,16 +45,19 @@ public class MyCSVReader {
                 break;
             }
             if(line == null) break;
-            if(linesNumber==0){
+            if(linesNumber==0)
                 MainActivity.TerminalID = Integer.parseInt(line[1]);
-            }
             linesNumber++;
         }
 
     }
 
+
+
     public String readLine() throws IOException {
-        return Arrays.toString(reader.readNext());
+        String[] line=reader.readNext();
+        CreateMarkers.createMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"RSSI:"+line[6]+"\nThroughput: "+line[7]);
+        return Arrays.toString(line);
     }
 
     public void resetFile() throws IOException {

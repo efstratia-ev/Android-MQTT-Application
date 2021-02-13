@@ -1,19 +1,20 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
-INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
-INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
-INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-51:12
 MERGED from [androidx.navigation:navigation-ui:2.3.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/94e6571d583ae21c2c11a19313eff527/navigation-ui-2.3.1/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.2.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/b5cf40796c25367401fbf6ec124658c0/material-1.2.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3650ec8bf0dcc8ccaa9d86d2cec22c9f/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
-MERGED from [com.takisoft.fix:preference-v7:25.0.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/353368c3231ecf58854371eba86d9d67/jetified-preference-v7-25.0.1.0/AndroidManifest.xml:2:1-20:12
+MERGED from [com.takisoft.fix:preference-v7:25.0.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/c9c93965c24febc7c4c98a45e34fbdd1/jetified-preference-v7-25.0.1.0/AndroidManifest.xml:2:1-20:12
 MERGED from [androidx.legacy:legacy-preference-v14:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/6a07064d444df89c47884dcd95988ec4/legacy-preference-v14-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.preference:preference:1.1.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/8d10121287e3d1db8348b26aeb30e297/preference-1.1.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.2.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/be6327719512c19af6e3dfcc948c3a09/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/f2bebeca849b3c1fc0bf348a9d3c5482/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-fragment:2.3.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/e50d582fc01e78d7c9baaf8b9764b659/navigation-fragment-2.3.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/062873a4c39b330a4639e2be10ffe43e/lifecycle-extensions-2.2.0/AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:17:1-38:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/96f63f4306f0fc56c140d73176dc3310/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/bbe13d8129bba81257bd6436c2b34ccd/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/150913b578eabd8badf12d4daa286895/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
@@ -25,6 +26,9 @@ MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/efstratia
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/cd02317c23e662d0fa4ab88d0d0916d7/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/10fcddba391b31bd86d702ee5aeb2035/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/f509f6d2f9c1ff170092c34a0922c9f9/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/7552fbf5e6a48133f0b37cb05ec34c1f/jetified-play-services-base-17.0.0/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/8801d3c9d2113623e2738400c252c2f3/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/dd1e3e814d50fa33e2a3a76723eba36a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:17:1-28:12
 MERGED from [androidx.fragment:fragment:1.2.4] /home/efstratia/.gradle/caches/transforms-2/files-2.1/ef2f95b43cc4863b13df752baa98dd65/fragment-1.2.4/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/ca8dccb6c474eba683dd5abfae1fb188/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.transition:transition:1.3.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/d2d9abf98ebf05f41956caebd20af979/transition-1.3.0/AndroidManifest.xml:17:1-24:12
@@ -53,51 +57,67 @@ MERGED from [androidx.print:print:1.0.0] /home/efstratia/.gradle/caches/transfor
 MERGED from [androidx.interpolator:interpolator:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/65c3d4650b10035e3c16dbbe7955e172/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/f21ecb78568f62b9cfdf7ce8b84f47c1/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/faa46d3172606436a70f4954c4fe88af/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
-INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
-INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
+INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-51:12
 	package
 		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:3:11-46
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-51:12
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-35:12
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:1-51:12
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:10:5-78
+	android:name
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:10:22-76
 uses-permission#android.permission.INTERNET
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:5:5-67
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:11:5-66
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:24:5-67
 	android:name
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:11:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:6:5-78
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:12:5-78
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:23:5-79
 	android:name
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:6:22-76
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:12:22-76
 uses-permission#android.permission.WAKE_LOCK
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:7:5-67
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:13:5-67
 	android:name
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:7:22-65
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:13:22-65
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:8:5-75
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:14:5-74
 	android:name
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:8:22-72
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:14:22-72
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:9:5-80
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:15:5-79
 	android:name
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:9:22-77
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:15:22-77
 application
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:13:5-33:19
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:17:5-49:19
 MERGED from [com.google.android.material:material:1.2.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/b5cf40796c25367401fbf6ec124658c0/material-1.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/b5cf40796c25367401fbf6ec124658c0/material-1.2.1/AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3650ec8bf0dcc8ccaa9d86d2cec22c9f/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3650ec8bf0dcc8ccaa9d86d2cec22c9f/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/062873a4c39b330a4639e2be10ffe43e/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/062873a4c39b330a4639e2be10ffe43e/lifecycle-extensions-2.2.0/AndroidManifest.xml:24:5-25:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/7552fbf5e6a48133f0b37cb05ec34c1f/jetified-play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/7552fbf5e6a48133f0b37cb05ec34c1f/jetified-play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/8801d3c9d2113623e2738400c252c2f3/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/8801d3c9d2113623e2738400c252c2f3/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/dd1e3e814d50fa33e2a3a76723eba36a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/dd1e3e814d50fa33e2a3a76723eba36a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
 MERGED from [androidx.core:core:1.3.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/395caf503a19363977c06465a7c114a5/core-1.3.1/AndroidManifest.xml:24:5-89
 MERGED from [androidx.core:core:1.3.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/395caf503a19363977c06465a7c114a5/core-1.3.1/AndroidManifest.xml:24:5-89
 MERGED from [androidx.lifecycle:lifecycle-process:2.2.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/b9c43d96e85ae92cb4d6a82112e73a94/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:24:5-30:19
@@ -107,39 +127,45 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/efstr
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.3.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/395caf503a19363977c06465a7c114a5/core-1.3.1/AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:18:13-39
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:22:13-39
 	android:label
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:16:13-45
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:20:13-45
 	android:roundIcon
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:17:13-58
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:21:13-58
 	android:icon
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:15:13-46
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:19:13-46
 	android:allowBackup
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:14:13-39
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:18:13-39
 	android:theme
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:19:13-44
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:23:13-44
+meta-data#com.google.android.geo.API_KEY
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:33:9-35:58
+	android:value
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:35:17-56
+	android:name
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:34:17-62
 activity#com.example.myapplication.MainActivity
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:20:9-29:20
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:37:9-46:20
 	android:label
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:22:17-49
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:39:17-49
 	android:theme
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:23:17-60
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:40:17-60
 	android:name
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:21:17-45
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:38:17-45
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:24:13-28:29
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:41:13-45:29
 action#android.intent.action.MAIN
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:25:17-68
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:42:17-68
 	android:name
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:25:25-66
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:42:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:27:17-76
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:44:17-76
 	android:name
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:27:27-74
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:44:27-74
 service#org.eclipse.paho.android.service.MqttService
-ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:31:9-79
+ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:48:9-79
 	android:name
-		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:31:18-77
+		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml:48:18-77
 uses-sdk
 INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
@@ -150,8 +176,8 @@ MERGED from [com.google.android.material:material:1.2.1] /home/efstratia/.gradle
 MERGED from [com.google.android.material:material:1.2.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/b5cf40796c25367401fbf6ec124658c0/material-1.2.1/AndroidManifest.xml:20:5-44
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3650ec8bf0dcc8ccaa9d86d2cec22c9f/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3650ec8bf0dcc8ccaa9d86d2cec22c9f/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
-MERGED from [com.takisoft.fix:preference-v7:25.0.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/353368c3231ecf58854371eba86d9d67/jetified-preference-v7-25.0.1.0/AndroidManifest.xml:7:5-11:335
-MERGED from [com.takisoft.fix:preference-v7:25.0.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/353368c3231ecf58854371eba86d9d67/jetified-preference-v7-25.0.1.0/AndroidManifest.xml:7:5-11:335
+MERGED from [com.takisoft.fix:preference-v7:25.0.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/c9c93965c24febc7c4c98a45e34fbdd1/jetified-preference-v7-25.0.1.0/AndroidManifest.xml:7:5-11:335
+MERGED from [com.takisoft.fix:preference-v7:25.0.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/c9c93965c24febc7c4c98a45e34fbdd1/jetified-preference-v7-25.0.1.0/AndroidManifest.xml:7:5-11:335
 MERGED from [androidx.legacy:legacy-preference-v14:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/6a07064d444df89c47884dcd95988ec4/legacy-preference-v14-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-preference-v14:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/6a07064d444df89c47884dcd95988ec4/legacy-preference-v14-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.preference:preference:1.1.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/8d10121287e3d1db8348b26aeb30e297/preference-1.1.1/AndroidManifest.xml:20:5-22:41
@@ -164,6 +190,8 @@ MERGED from [androidx.navigation:navigation-fragment:2.3.1] /home/efstratia/.gra
 MERGED from [androidx.navigation:navigation-fragment:2.3.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/e50d582fc01e78d7c9baaf8b9764b659/navigation-fragment-2.3.1/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/062873a4c39b330a4639e2be10ffe43e/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/062873a4c39b330a4639e2be10ffe43e/lifecycle-extensions-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/96f63f4306f0fc56c140d73176dc3310/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/96f63f4306f0fc56c140d73176dc3310/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/bbe13d8129bba81257bd6436c2b34ccd/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
@@ -186,6 +214,12 @@ MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/efstratia/.grad
 MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/10fcddba391b31bd86d702ee5aeb2035/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/f509f6d2f9c1ff170092c34a0922c9f9/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/f509f6d2f9c1ff170092c34a0922c9f9/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/7552fbf5e6a48133f0b37cb05ec34c1f/jetified-play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/7552fbf5e6a48133f0b37cb05ec34c1f/jetified-play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/8801d3c9d2113623e2738400c252c2f3/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/8801d3c9d2113623e2738400c252c2f3/jetified-play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/dd1e3e814d50fa33e2a3a76723eba36a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/dd1e3e814d50fa33e2a3a76723eba36a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.2.4] /home/efstratia/.gradle/caches/transforms-2/files-2.1/ef2f95b43cc4863b13df752baa98dd65/fragment-1.2.4/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.2.4] /home/efstratia/.gradle/caches/transforms-2/files-2.1/ef2f95b43cc4863b13df752baa98dd65/fragment-1.2.4/AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/efstratia/.gradle/caches/transforms-2/files-2.1/ca8dccb6c474eba683dd5abfae1fb188/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
@@ -245,9 +279,9 @@ MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/efstratia/
 INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
 INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.takisoft.fix:preference-v7:25.0.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/353368c3231ecf58854371eba86d9d67/jetified-preference-v7-25.0.1.0/AndroidManifest.xml:11:9-332
+		ADDED from [com.takisoft.fix:preference-v7:25.0.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/c9c93965c24febc7c4c98a45e34fbdd1/jetified-preference-v7-25.0.1.0/AndroidManifest.xml:11:9-332
 	xmlns:tools
-		ADDED from [com.takisoft.fix:preference-v7:25.0.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/353368c3231ecf58854371eba86d9d67/jetified-preference-v7-25.0.1.0/AndroidManifest.xml:8:9-55
+		ADDED from [com.takisoft.fix:preference-v7:25.0.1.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/c9c93965c24febc7c4c98a45e34fbdd1/jetified-preference-v7-25.0.1.0/AndroidManifest.xml:8:9-55
 	android:targetSdkVersion
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
 		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
@@ -256,6 +290,32 @@ INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
 		ADDED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
 		INJECTED from /home/efstratia/Documents/di/examino 7/android_project/project2020/MyApplication/app/src/main/AndroidManifest.xml
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/3b6fda2b44e9d68a417a72d9c525ce08/jetified-play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/7552fbf5e6a48133f0b37cb05ec34c1f/jetified-play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/7552fbf5e6a48133f0b37cb05ec34c1f/jetified-play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/7552fbf5e6a48133f0b37cb05ec34c1f/jetified-play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/7552fbf5e6a48133f0b37cb05ec34c1f/jetified-play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/dd1e3e814d50fa33e2a3a76723eba36a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/dd1e3e814d50fa33e2a3a76723eba36a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/dd1e3e814d50fa33e2a3a76723eba36a/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
 provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
 ADDED from [androidx.lifecycle:lifecycle-process:2.2.0] /home/efstratia/.gradle/caches/transforms-2/files-2.1/b9c43d96e85ae92cb4d6a82112e73a94/jetified-lifecycle-process-2.2.0/AndroidManifest.xml:25:9-29:43
 	android:authorities

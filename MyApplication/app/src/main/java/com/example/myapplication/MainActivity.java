@@ -14,7 +14,11 @@ import androidx.annotation.NonNull;
 import androidx.core.view.GravityCompat;
 import androidx.preference.PreferenceManager;
 import com.example.myapplication.MQTTConnection.MQTTInfo;
+import com.example.myapplication.MQTTConnection.MQTTPublisher;
+import com.example.myapplication.MQTTConnection.MQTTSubscriber;
 import com.example.myapplication.Utilities.MyCSVReader;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.material.navigation.NavigationView;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -23,11 +27,17 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import org.eclipse.paho.client.mqttv3.MqttException;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import static com.example.myapplication.Utilities.Connection.isConnected;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
-
+    public static ArrayList<MarkerOptions> markersList=new ArrayList<>();
+    public static ArrayList<MarkerOptions> predictionMarkersList=new ArrayList<>();
     public static boolean restart=true;
     public static int max;
     public static int measurementsSend;
@@ -35,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @SuppressLint("StaticFieldLeak")
     public static Context context;
     public static MyCSVReader csvReader;
+    public static MQTTPublisher MQTTPub = null;
     private AppBarConfiguration mAppBarConfiguration;
     DrawerLayout drawer;
     NavigationView navigationView;
@@ -44,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         context=this;
+        MapsInitializer.initialize(this);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -70,10 +82,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void run() {
                 isConnected(context);
-                handler.postDelayed(this,3000);
+                handler.postDelayed(this,1000);
             }
-        },3000);
+        },1000);
 
+        try {
+            MQTTSubscriber MQTTSub=new MQTTSubscriber(context);
+        } catch (MqttException e) {
+            e.printStackTrace();
+        }
+        try {
+            MQTTPub=new MQTTPublisher(MainActivity.context);
+        } catch (MqttException e) {
+            e.printStackTrace();
+            return;
+        }
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

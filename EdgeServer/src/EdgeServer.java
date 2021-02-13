@@ -7,7 +7,7 @@ class EdgeServer{
     public static void main(String[] argv){
         try {
             createHeatMap();
-            //MQTTSubscriber subscriber=new MQTTSubscriber();
+            MQTTSubscriber subscriber=new MQTTSubscriber();
         } catch (Exception e) {
             e.printStackTrace();
         }

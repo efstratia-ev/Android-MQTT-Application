@@ -17,6 +17,8 @@ import org.eclipse.paho.client.mqttv3.MqttException;
 
 import java.io.IOException;
 
+import static com.example.myapplication.MainActivity.MQTTPub;
+
 public class HomeFragment extends Fragment {
 
     @SuppressLint("StaticFieldLeak")
@@ -24,6 +26,7 @@ public class HomeFragment extends Fragment {
     private static int i = 0;
     @SuppressLint("StaticFieldLeak")
     private static TextView txtView;
+    private static String button_value="Start Progress";
     private final Handler hdlr = new Handler();
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle   savedInstanceState) {
@@ -31,26 +34,39 @@ public class HomeFragment extends Fragment {
         progressBar = (ProgressBar) view.findViewById(R.id.pBar);
         progressBar.setMax(MainActivity.measurementsSend);
         txtView = (TextView) view.findViewById(R.id.tView);
-        txtView.setText(0+"/"+MainActivity.measurementsSend);
-        if(MainActivity.restart) {
+        txtView.setText(i+"/"+MainActivity.measurementsSend);
+        progressBar.setProgress(i);
+        if(i==0) {
             progressBar.setVisibility(View.GONE); // to hide
             txtView.setVisibility(View.GONE);
         }
         final Button btn = (Button)view.findViewById(R.id.btnShow);
-        if(i!=0) btn.setText("Stop Progress");
+        btn.setText(button_value);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (i!=0) {
+                if(i==MainActivity.max){
                     i=0;
-                    btn.setText("Start Progress");
+                    btn.setText("Restart Progress");
+                    button_value="Restart Progress";
+                }
+                else if (i!=0 && btn.getText().equals("Pause Progress")) {
+                    btn.setText("Continue Progress");
+                    button_value="Continue Progress";
                     MainActivity.restart=true;
-                    progressBar.setVisibility(View.GONE); // to hide
-                    txtView.setVisibility(View.GONE);
                 }
                 else {
+                    if(i==0){
+                        try {
+                            MainActivity.csvReader.resetFile();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                            return;
+                        }
+                    }
                     MainActivity.restart=false;
-                    btn.setText("Stop Progress");
+                    btn.setText("Pause Progress");
+                    button_value="Pause Progress";
                     progressBar.setVisibility(View.VISIBLE); //to show
                     txtView.setVisibility(View.VISIBLE);
                     Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
@@ -61,19 +77,6 @@ public class HomeFragment extends Fragment {
                     });
                     Thread t=new Thread(){
                         public void run() {
-                            try {
-                                MainActivity.csvReader.resetFile();
-                            } catch (IOException e) {
-                                e.printStackTrace();
-                                return;
-                            }
-                            MQTTPublisher MQTTPub = null;
-                            try {
-                                MQTTPub=new MQTTPublisher(MainActivity.context);
-                            } catch (MqttException e) {
-                                e.printStackTrace();
-                                return;
-                            }
                             while (i < MainActivity.measurementsSend && !MainActivity.restart) {
                                 try {
                                     String toSend=MainActivity.csvReader.readLine();

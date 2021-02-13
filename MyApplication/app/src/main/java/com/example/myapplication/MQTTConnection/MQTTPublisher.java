@@ -40,6 +40,7 @@ public class MQTTPublisher {
             }
             @Override
             public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
+
                 returnValue[0] =false;
             }
         });

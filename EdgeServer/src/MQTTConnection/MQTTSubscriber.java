@@ -1,5 +1,7 @@
 package MQTTConnection;
 
+import HeatMapCreation.HeatMapUtil;
+import Predictions.PredictionDataUtil;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
@@ -7,8 +9,10 @@ public class MQTTSubscriber implements MqttCallback {
     String[] topics;
     String clientId;
     MqttClient client;
+    PredictionDataUtil predictions;
 
-    public MQTTSubscriber() throws MqttException {
+    public MQTTSubscriber() throws Exception {
+        predictions=new PredictionDataUtil();
         clientId=MQTTInfo.getClient()+"sub";
         topics=MQTTInfo.getSubscriptionTopics();
 
@@ -29,7 +33,7 @@ public class MQTTSubscriber implements MqttCallback {
 
     @Override
     public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {
-        System.out.println(topic + ": " + mqttMessage);
+        predictions.predictData(mqttMessage.toString(), HeatMapUtil.heatMapRSSI,HeatMapUtil.heatMapThroughput);
     }
 
     @Override
