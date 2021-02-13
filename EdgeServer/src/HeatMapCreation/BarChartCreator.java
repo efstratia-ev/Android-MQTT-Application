@@ -17,18 +17,17 @@ public class BarChartCreator extends Application {
         List<String> vehicles = Arrays.asList(params.getNamed().get("vehicles").split("\\s*,\\s*"));
         List<String> meanErrors = Arrays.asList(params.getNamed().get("meanErrors").split("\\s*,\\s*"));
 
-        stage.setTitle("Comparison of Mean Errors");
+        stage.setTitle("Mean Errors Values");
         final CategoryAxis xAxis = new CategoryAxis();
         final NumberAxis yAxis = new NumberAxis();
         final BarChart<String,Number> bc = new BarChart<String,Number>(xAxis,yAxis);
         bc.setBarGap(15);
         //bc.setCategoryGap(20);
         bc.setTitle("Predicted Data Mean Errors");
-        xAxis.setLabel("Android Terminal");
-        yAxis.setLabel("Mean Error");
+        xAxis.setLabel("Vehicles");
+        yAxis.setLabel("Mean Error(m)");
 
         XYChart.Series series1 = new XYChart.Series();
-        series1.setName("2003");
         for(int i=0;i<vehicles.size();i++){
             series1.getData().add(new XYChart.Data(vehicles.get(i),Double.valueOf(meanErrors.get(i))));
         }

@@ -79,7 +79,7 @@ public class PredictionDataUtil {
         String vehiclesNames = predictionData.stream().map(data -> "vehicle"+data.getDeviceId()+",").reduce("", String::concat);
         String vehicleMeanErrors = predictionData.stream().map(data ->data.getMeanError()+",").reduce("", String::concat);
 
-        vehiclesNames+="All";
+        vehiclesNames+="Overall";
         vehicleMeanErrors+=String.valueOf(calculateOverallMeanError());
         System.out.println("All Vehicles completed publishing data.\n");
         BarChartCreator.launch(BarChartCreator.class,"--vehicles="+vehiclesNames, "--meanErrors="+vehicleMeanErrors);
@@ -92,7 +92,7 @@ public class PredictionDataUtil {
     public void vehicleCompleted(int vehicleId){
         PredictionData currentVehicle=containsId(vehicleId);
         currentVehicle.completed();
-        System.out.println("Vehicle with id:"+vehicleId+" send all data.\nBased on predicted data, the mean error " +
-                "calculated in meters is:"+currentVehicle.getMeanError()+"\n\n");
+        System.out.println("Vehicle with id:"+vehicleId+" completed publishing data.\nThe mean error, " +
+                "calculated in meters, is:"+currentVehicle.getMeanError()+"\n\n");
     }
 }
