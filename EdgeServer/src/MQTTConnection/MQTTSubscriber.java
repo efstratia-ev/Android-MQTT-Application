@@ -33,7 +33,13 @@ public class MQTTSubscriber implements MqttCallback {
 
     @Override
     public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {
-        predictions.predictData(mqttMessage.toString(), HeatMapUtil.heatMapRSSI,HeatMapUtil.heatMapThroughput);
+        String message=mqttMessage.toString();
+        if ("END".equals(message.substring(0,3))) {
+            predictions.vehicleCompleted(Integer.parseInt(message.substring(4)));
+            if(predictions.allVehiclesCompleted())
+                predictions.makeBarChart();
+        }
+        else predictions.predictData(message, HeatMapUtil.heatMapRSSI,HeatMapUtil.heatMapThroughput);
     }
 
     @Override

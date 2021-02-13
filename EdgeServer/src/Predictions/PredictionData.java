@@ -128,4 +128,6 @@ public class PredictionData {
     public void completed(){
         this.end=true;
     }
+
+    public boolean hasCompleted(){return this.end;}
 }

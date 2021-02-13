@@ -41,18 +41,3 @@ public class BarChartCreator extends Application {
     }
 
 }
-
-//    public static double calculateOverallMeanError(ArrayList<PredictionData> predictionData){
-//        double overallMeanError=predictionData.stream().mapToDouble(PredictionData::getMeanError).sum();
-//        return overallMeanError/predictionData.size();
-//    }
-//
-//    public static void  testFunction(ArrayList<PredictionData> predictionData){
-//        String vehiclesNames = predictionData.stream().map(data -> "vehicle"+data.getDeviceId()+",").reduce("", String::concat);
-//        String vehicleMeanErrors = predictionData.stream().map(data ->data.getMeanError()+",").reduce("", String::concat);
-//
-//        vehiclesNames+="All";
-//        vehicleMeanErrors+=String.valueOf(calculateOverallMeanError(predictionData));
-//
-//        BarChartCreator.launch(BarChartCreator.class,"--vehicles="+vehiclesNames, "--meanErrors="+vehicleMeanErrors);
-//    }

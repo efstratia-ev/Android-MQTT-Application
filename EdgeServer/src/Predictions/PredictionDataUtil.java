@@ -1,5 +1,6 @@
 package Predictions;
 
+import HeatMapCreation.BarChartCreator;
 import HeatMapCreation.DatabaseUtil;
 import HeatMapCreation.HeatMap;
 import MQTTConnection.MQTTPublisher;
@@ -10,8 +11,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class PredictionDataUtil {
-     ArrayList<PredictionData> predictionData = new ArrayList<>();
-     DatabaseUtil vehicleDatabase=new DatabaseUtil();
+    ArrayList<PredictionData> predictionData = new ArrayList<>();
+    DatabaseUtil vehicleDatabase=new DatabaseUtil();
     MQTTPublisher MQTTPub=new MQTTPublisher();
 
     public PredictionDataUtil() throws Exception {
@@ -67,5 +68,31 @@ public class PredictionDataUtil {
     public void calculateError() throws SQLException {
         calculateMeanErrors();
         vehicleDatabase.closeConnection();
+    }
+
+    public double calculateOverallMeanError(){
+        double overallMeanError=predictionData.stream().mapToDouble(PredictionData::getMeanError).sum();
+        return overallMeanError/predictionData.size();
+    }
+
+    public void  makeBarChart(){
+        String vehiclesNames = predictionData.stream().map(data -> "vehicle"+data.getDeviceId()+",").reduce("", String::concat);
+        String vehicleMeanErrors = predictionData.stream().map(data ->data.getMeanError()+",").reduce("", String::concat);
+
+        vehiclesNames+="All";
+        vehicleMeanErrors+=String.valueOf(calculateOverallMeanError());
+        System.out.println("All Vehicles completed publishing data.\n");
+        BarChartCreator.launch(BarChartCreator.class,"--vehicles="+vehiclesNames, "--meanErrors="+vehicleMeanErrors);
+    }
+
+    public boolean allVehiclesCompleted(){
+        return predictionData.stream().allMatch(PredictionData::hasCompleted);
+    }
+
+    public void vehicleCompleted(int vehicleId){
+        PredictionData currentVehicle=containsId(vehicleId);
+        currentVehicle.completed();
+        System.out.println("Vehicle with id:"+vehicleId+" send all data.\nBased on predicted data, the mean error " +
+                "calculated in meters is:"+currentVehicle.getMeanError()+"\n\n");
     }
 }
