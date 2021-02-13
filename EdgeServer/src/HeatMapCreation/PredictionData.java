@@ -13,11 +13,13 @@ public class PredictionData {
     private double predictedThroughput;
     private int count;
     private double sum;
+    private boolean end;
 
     public PredictionData(int deviceId) {
         this.deviceId = deviceId;
         this.count=0;
         this.sum=0.0;
+        this.end=false;
     }
 
     public void updatePredictedData(double predictedLat,double predictedLong,double predictedRssi,double predictedThroughput){
@@ -111,5 +113,9 @@ public class PredictionData {
 
     public double getPredictedThroughput() {
         return predictedThroughput;
+    }
+
+    public void completed(){
+        this.end=true;
     }
 }
