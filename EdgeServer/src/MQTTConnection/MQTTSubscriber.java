@@ -5,6 +5,8 @@ import Predictions.PredictionDataUtil;
 import org.eclipse.paho.client.mqttv3.*;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 
+import static javafx.application.Platform.exit;
+
 public class MQTTSubscriber implements MqttCallback {
     String[] topics;
     String clientId;
@@ -36,8 +38,11 @@ public class MQTTSubscriber implements MqttCallback {
         String message=mqttMessage.toString();
         if ("END".equals(message.substring(0,3))) {
             predictions.vehicleCompleted(Integer.parseInt(message.substring(4)));
-            if(predictions.allVehiclesCompleted())
+            if(predictions.allVehiclesCompleted()) {
+                predictions.closeConnection();
                 predictions.makeBarChart();
+                System.exit(0);
+            }
         }
         else predictions.predictData(message, HeatMapUtil.heatMapRSSI,HeatMapUtil.heatMapThroughput);
     }

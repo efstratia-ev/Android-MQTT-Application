@@ -56,7 +56,8 @@ public class MyCSVReader {
 
     public String readLine() throws IOException {
         String[] line=reader.readNext();
-        CreateMarkers.createMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"RSSI:"+line[6]+"\nThroughput: "+line[7]);
+        CreateMarkers.createMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"Latitude:"+line[2]
+                +"\nLongitude:"+line[3]+"\nRSSI:"+line[6]+"\nThroughput: "+line[7]);
         return Arrays.toString(line);
     }
 

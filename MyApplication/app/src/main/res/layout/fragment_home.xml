@@ -23,8 +23,14 @@
             android:id="@+id/btnShow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="20dp"
             android:text="Start Progress"
-            android:layout_below="@+id/tView"/>
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/tView" android:layout_marginTop="12dp" android:layout_centerVertical="true"/>
+    <Button
+            android:id="@+id/btnStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/tView" android:layout_marginTop="84dp"/>
 </RelativeLayout>

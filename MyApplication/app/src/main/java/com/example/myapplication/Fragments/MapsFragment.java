@@ -79,8 +79,8 @@ public class MapsFragment extends Fragment implements
         LatLngBounds bounds = builder.build();
         int padding = 0; // offset from edges of the map in pixels
         CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
-      //  map.animateCamera( CameraUpdateFactory.zoomTo( 25.0f ) );
-       // map.animateCamera(cu);
+       /* map.animateCamera( CameraUpdateFactory.zoomTo( 25.0f ) );
+        map.animateCamera(cu);*/
         map.moveCamera(cu);
         map.setInfoWindowAdapter(new GoogleMap.InfoWindowAdapter() {
 

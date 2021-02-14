@@ -1852,6 +1852,7 @@ id blocking
 id bottom
 id bounce
 id btnShow
+id btnStop
 id buttonPanel
 id cache_measures
 id cancel_action

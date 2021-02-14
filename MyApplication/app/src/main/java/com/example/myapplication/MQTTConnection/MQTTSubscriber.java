@@ -47,7 +47,8 @@ public class MQTTSubscriber implements MqttCallback {
     @Override
     public void messageArrived(String topic, MqttMessage mqttMessage) throws Exception {
         String[] line = mqttMessage.toString().replace("[","").replace("]","").split(", ");
-        CreateMarkers.createPredictionMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"RSSI:"+line[4]+"\nThroughput: "+line[5]);
+        CreateMarkers.createPredictionMarker(Double.parseDouble(line[2]),Double.parseDouble(line[3]),line[0],"Latitude:"+line[2]
+                +"\nLongitude:"+line[3]+"\nRSSI:"+line[4]+"\nThroughput: "+line[5]);
     }
 
     @Override

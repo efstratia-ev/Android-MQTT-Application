@@ -20,6 +20,7 @@ abstract public class CreateMarkers {
     }
 
     public static void createPredictionMarker(double latitude, double longitude, String title, String snippet) {
+        if(title.equals("0.0")) return;
         MainActivity.predictionMarkersList.add(new MarkerOptions()
                 .position(new LatLng(latitude, longitude))
                 .anchor(0.5f, 0.5f)

@@ -28,6 +28,7 @@ public class HomeFragment extends Fragment {
     private static TextView txtView;
     private static String button_value="Start Progress";
     private final Handler hdlr = new Handler();
+    static boolean stop=false;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle   savedInstanceState) {
         View view =  inflater.inflate(R.layout.fragment_home, container, false);
@@ -36,21 +37,36 @@ public class HomeFragment extends Fragment {
         txtView = (TextView) view.findViewById(R.id.tView);
         txtView.setText(i+"/"+MainActivity.measurementsSend);
         progressBar.setProgress(i);
+        final Button stop_btn = (Button)view.findViewById(R.id.btnStop);
         if(i==0) {
             progressBar.setVisibility(View.GONE); // to hide
             txtView.setVisibility(View.GONE);
+            stop_btn.setVisibility(View.GONE);
+        }
+        else {
+            progressBar.setVisibility(View.VISIBLE); // to hide
+            txtView.setVisibility(View.VISIBLE);
         }
         final Button btn = (Button)view.findViewById(R.id.btnShow);
         btn.setText(button_value);
+        if(stop){
+            btn.setVisibility(View.GONE);
+            stop_btn.setVisibility(View.GONE);
+        }
+        stop_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.restart=true;
+                stop=true;
+                btn.setVisibility(View.GONE);
+                stop_btn.setVisibility(View.GONE);
+            }
+        });
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(i==MainActivity.max){
-                    i=0;
-                    btn.setText("Restart Progress");
-                    button_value="Restart Progress";
-                }
-                else if (i!=0 && btn.getText().equals("Pause Progress")) {
+                if(stop) return;
+                if (i!=0 && btn.getText().equals("Pause Progress")) {
                     btn.setText("Continue Progress");
                     button_value="Continue Progress";
                     MainActivity.restart=true;
@@ -67,6 +83,7 @@ public class HomeFragment extends Fragment {
                     MainActivity.restart=false;
                     btn.setText("Pause Progress");
                     button_value="Pause Progress";
+                    stop_btn.setVisibility(View.VISIBLE);
                     progressBar.setVisibility(View.VISIBLE); //to show
                     txtView.setVisibility(View.VISIBLE);
                     Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
@@ -96,6 +113,14 @@ public class HomeFragment extends Fragment {
                                 try {
                                     Thread.sleep(1000);
                                 } catch (InterruptedException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                            if(i==MainActivity.measurementsSend || stop){
+                                stop=true;
+                                try {
+                                    MQTTPub.publish_message("END-"+MainActivity.TerminalID);
+                                } catch (MqttException e) {
                                     e.printStackTrace();
                                 }
                             }

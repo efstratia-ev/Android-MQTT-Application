@@ -1,4 +1,4 @@
-package HeatMapCreation;
+package Predictions;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

@@ -1,12 +1,8 @@
 package Predictions;
 
-import HeatMapCreation.BarChartCreator;
-import HeatMapCreation.DatabaseUtil;
 import HeatMapCreation.HeatMap;
 import MQTTConnection.MQTTPublisher;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -65,8 +61,7 @@ public class PredictionDataUtil {
         predictionData.stream().forEach(vehicle -> {System.out.println("Mean Error of Vehicle "+vehicle.getDeviceId()+" is : "+vehicle.getMeanError());});
     }
 
-    public void calculateError() throws SQLException {
-        calculateMeanErrors();
+    public void closeConnection() throws SQLException {
         vehicleDatabase.closeConnection();
     }
 

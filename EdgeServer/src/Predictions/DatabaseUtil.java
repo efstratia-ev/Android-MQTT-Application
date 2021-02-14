@@ -1,4 +1,4 @@
-package HeatMapCreation;
+package Predictions;
 
 import Predictions.PredictionData;
 
