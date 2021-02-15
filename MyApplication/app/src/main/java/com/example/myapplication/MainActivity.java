@@ -91,12 +91,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } catch (MqttException e) {
             e.printStackTrace();
         }
-        try {
-            MQTTPub=new MQTTPublisher(MainActivity.context);
-        } catch (MqttException e) {
-            e.printStackTrace();
-            return;
-        }
     }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

@@ -39,6 +39,11 @@ public class HomeFragment extends Fragment {
         progressBar.setProgress(i);
         final Button stop_btn = (Button)view.findViewById(R.id.btnStop);
         if(i==0) {
+            try {
+                MQTTPub=new MQTTPublisher(MainActivity.context);
+            } catch (MqttException e) {
+                e.printStackTrace();
+            }
             progressBar.setVisibility(View.GONE); // to hide
             txtView.setVisibility(View.GONE);
             stop_btn.setVisibility(View.GONE);
